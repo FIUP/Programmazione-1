@@ -22,8 +22,9 @@ void stampaStrato(int * s, int dimS, int dimr, int dimc, ofstream& out){
 }
 
 main(){
-	int X[400], *p=X, *q=p;			//va visto come Y[3][6][5]
-	int lim1, lim2, lim3, n_el;		// lim1 = strati, lim2= righe, lim3 = colonne 
+	int X[400], *p=X, *q=p, inseriti =0;	//va visto come Y[3][6][5]
+	bool continua =true;
+	int lim1, lim2, lim3, n_el;				// lim1 = strati, lim2= righe, lim3 = colonne 
 	ifstream IN("input");
 	ofstream OUT("output");
 	
@@ -32,12 +33,14 @@ main(){
 	
 if(IN && OUT){
 	IN >>lim1 >> lim2 >> lim3 >> n_el;
-	if(n_el >0 && n_el < 401 && lim1 >0 && lim2 >0 && lim3 >0){
-		for(int c =0; c< lim3; c++)	
-			for(int i = 0; i < lim1; i++){
-				for(int j=0; j<lim2;j++)
-					IN >> p[i*lim2*lim3+j*lim3+c];
-	}
+	for(int c =0; c< lim3 && continua; c++)	
+		for(int i = 0; i < lim1 && continua; i++)
+			for(int j=0; j<lim2 && continua;j++){
+				IN >> p[i*lim2*lim3+j*lim3+c];
+				inseriti++;
+				if(inseriti == n_el)
+					continua = false;
+			}
 		
 	IN.close();
 				
@@ -49,7 +52,6 @@ if(IN && OUT){
 	OUT <<"fine";
 
 	OUT.close();
-	} else OUT << "Errore valori non validi"; 
 } else cout << "Errore con i file";
 			
 
