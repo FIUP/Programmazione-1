@@ -28,7 +28,7 @@ main(){
 	ifstream IN("input");
 	ofstream OUT("output");
 	
-	for(int i=0; i<401; i++)
+	for(int i=0; i<400; i++)
 		X[i] = -1;
 	
 if(IN && OUT){
