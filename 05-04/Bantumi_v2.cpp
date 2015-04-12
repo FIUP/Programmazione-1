@@ -1,5 +1,4 @@
 /*Integrazione sei crediti*/ 
-//Bantumi V2 implementa la cattura come prevista dalle regole del gioco http://mancala.wikia.com/wiki/Kalah
 #include<iostream>
 #include<fstream>
 using namespace std;
@@ -27,7 +26,7 @@ void stampa(int B[][7], ofstream & OUT){
 Chiamiamo old_B il valore di B all'invocazione della funzione)*/
 
 bool semina(int B[][7], int player, int buca, int fagioli){
-	bool cambio = false;
+	bool cambio = true, inverti = false;
 	int p = player, add=0, k; //add fagioli da aggiungere
 	B[player][buca] = 0; //svuoto la buca
 while(fagioli >0){
@@ -35,7 +34,7 @@ while(fagioli >0){
 		for(int j=buca+1; j<7 && fagioli >0; j++)
 			if(j !=6){
 				if(fagioli ==1 && B[i][j]==0){
-					if(!cambio){
+					if(!inverti){
 						if(i)
 							k=0;
 						else k=1;
@@ -55,26 +54,18 @@ while(fagioli >0){
 				}
 			}
 			else{
+				if(fagioli ==1 && i==p)
+					cambio = false;
 				if(i==p){
 					(B[i][j])++;
 					fagioli--;
-					if(fagioli>0){
-						if(player)			//non è player 0
-							player =0;		//diventa player 0
-						else				// è player 0
-							player=1;		//cambia
-						buca=-1;
-						cambio = true;
-					}
 				}
-				else{
-					if(player)			//non è player 0
-						player =0;		//diventa player 0
-					else				// è player 0
-						player=1;		//cambia
-					buca=-1;
-					cambio = true;
-				}
+				if(player)			//non è player 0
+					player =0;		//diventa player 0
+				else				// è player 0
+					player=1;		//cambia
+				buca=-1;
+				inverti = true;
 			}
 			
 }
@@ -86,7 +77,7 @@ del gioco descritte prima. Restituisce true se e solo se alla fine della semina 
 verifica il caso (iii))*/
 
 main(){
-	ifstream IN("input.txt");
+	ifstream IN("input");
 	ofstream OUT("output");
 	int p,b, fagioli =0;	
 	bool cambio = false; //p = player b = buca
