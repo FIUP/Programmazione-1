@@ -27,56 +27,34 @@ void stampa(int B[][7], ofstream & OUT){
 Chiamiamo old_B il valore di B all'invocazione della funzione)*/
 
 bool semina(int B[][7], int player, int buca, int fagioli){
-	bool cambio = false;
+	bool cambio = false, aggiungi = true;
 	int p = player, add=0, k; //add fagioli da aggiungere
 	B[player][buca] = 0; //svuoto la buca
 while(fagioli >0){
 	for(int i=player; i<2 && fagioli >0; i++)
-		for(int j=buca+1; j<7 && fagioli >0; j++)
-			if(j !=6){
-				if(fagioli ==1 && B[i][j]==0){
-					if(!cambio){
-						if(i)
-							k=0;
-						else k=1;
-						add = B[k][j]+1;
-						B[k][j] =0;
-						B[i][6]=B[i][6]+add;
-						fagioli--;
-					}
-					else{
-						B[p][6]=B[p][6]+1;
-						fagioli--;
-					}
-				}
-				else{
-					(B[i][j])++;
-					fagioli--;
-				}
-			}
-			else{
-				if(i==p){
-					(B[i][j])++;
-					fagioli--;
-					if(fagioli>0){
-						if(player)			//non è player 0
-							player =0;		//diventa player 0
-						else				// è player 0
-							player=1;		//cambia
-						buca=-1;
-						cambio = true;
-					}
-				}
-				else{
-					if(player)			//non è player 0
-						player =0;		//diventa player 0
-					else				// è player 0
-						player=1;		//cambia
-					buca=-1;
-					cambio = true;
-				}
-			}
+		for(int j=buca+1; j<7 && fagioli >0; j++){
 			
+			if((i == p) || (cambio && j != 6 )){
+				if(fagioli ==1 && B[i][j] ==0 && j !=6 && i == p){
+					if(i)
+						k=0;
+					else k=1;
+					add = B[k][j]+1;
+					B[k][j] =0;
+					B[i][6]=B[i][6]+add;
+				}
+				else (B[i][j])++;
+				fagioli--;
+				}
+		}
+		if(fagioli>0){
+			if(player)			//non è player 0
+				player =0;		//diventa player 0
+			else				// è player 0
+				player=1;		//cambia
+			buca=-1;
+			cambio = true;
+		}
 }
 return cambio;
 }
@@ -86,7 +64,7 @@ del gioco descritte prima. Restituisce true se e solo se alla fine della semina 
 verifica il caso (iii))*/
 
 main(){
-	ifstream IN("input.txt");
+	ifstream IN("input");
 	ofstream OUT("output");
 	int p,b, fagioli =0;	
 	bool cambio = false; //p = player b = buca
@@ -99,7 +77,6 @@ main(){
 		IN >> p >> b;
 		while(b !=-1){
 			OUT << p << " " << b << " " << endl;
-			cout << "Mossa player " << p << " buca "<< b << endl; 
 			if(B[p][b] !=0){
 				fagioli = B[p][b];
 				cambio = semina(B, p, b, fagioli);
