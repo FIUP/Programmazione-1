@@ -12,15 +12,17 @@ bool match(int *x, int *P, int dimP, int lim3){
 }
 
 int contaMatch(int *x, int lung, int lim3, int *P, int dimP, ofstream& OUT){
-	int n_match=0;
-	for(int i=0; i<lung-dimP+1; i++)
+	int n_match=0, jump=0;
+	for(int i=0; i<lung-dimP+1; i=i+jump)
 		if(match(x, P, dimP, lim3)){
 			n_match++;
 			x=x+dimP*lim3;
-			i++;
+			jump=dimP;
 		}
-		else
+		else{
 			x=x+lim3;
+			jump=1;
+		}
 		return n_match;	
 }
 
