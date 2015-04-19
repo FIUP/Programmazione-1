@@ -11,7 +11,7 @@ bool match(int *x, int *P, int dimP, int lim3){
 	return ok;
 }
 
-int contaMatch(int *x, int lung, int lim3, int *P, int dimP, ofstream& OUT){
+int contaMatch(int *x, int lung, int lim3, int *P, int dimP){
 	int n_match=0, jump=0;
 	for(int i=0; i<lung-dimP+1; i=i+jump)
 		if(match(x, P, dimP, lim3)){
@@ -68,7 +68,7 @@ int main(){
 	for(int i=0; i < vfmax; i++){
 		if(i<rim)
 			lung++;
-		match = contaMatch(x+i,lung,lim3,P,dimP, OUT);
+		match = contaMatch(x+i,lung,lim3,P,dimP);
 		OUT << "V-fetta " << i << " = " << match << " match" << endl;
 		match=0;
 		lung = nrp;
