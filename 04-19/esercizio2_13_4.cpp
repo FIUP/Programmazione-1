@@ -8,52 +8,47 @@ int qdista(int strato, int rim, int hfetta, int lim2, int lim3){
 	return distanza;
 }
 
-bool match(int *x, int *P, int dimP, int distanza, int lim2, int lim3, int n_el){
+bool match(int *x, int *P, int dimP, int distanza, int lim2, int lim3){
 	bool ok=true;
-	int cont =0, dist = distanza;
-	for(int i=0; i<dimP && ok; i++)
-		if(distanza > n_el)
-			return false;
-		else {
+	int dist = distanza;
+	for(int i=0; i<dimP && ok; i++){
 		if(x[dist]!=P[i])
 			ok=false;
 		else{
-			cont++;
 			if((dist+1)%lim3 ==0 )
-				dist += (lim2-1)*lim3;
+				dist += (lim2-1)*lim3+1;
 			else dist++;
 		}
-		if(cont == dimP)
-			ok = true;
-		}
+	}
+	
 	return ok;
 }
 
-int contaMatch(int *x, int fetta, int lung, int lim1, int lim2, int lim3, int *P, int dimP, int n_el, ofstream& OUT){
-	int n_match=0, jump=0, distanza = 0, strato=0, rim=0, f;
-	for(int i=0; i<lung-dimP+1; i=i+jump)
-		f = i;
-		strato = f/lim3;
-		rim= f%lim3;
-		//if(rim ==0){
-			//x=x+(strato*lim2*lim3+fetta*lim3)
-		//}
-		//else x = x+1;
+int contaMatch(int *x, int fetta, int lung, int lim2, int lim3, int *P, int dimP){
+	int n_match=0, jump=1, distanza = 0, strato=0, rim=0;
+	for(int i=0; i<lung-dimP+1; i=i+jump){
+		strato = i/lim3;
+		rim= i%lim3;
+		//OUT << "i " << i << endl;
 		distanza = qdista(strato, rim, fetta, lim2, lim3);
-		if(match(x, P, dimP, distanza, lim2, lim3, n_el)){
+		//OUT << "i: " << i << " distanza: " << distanza <<endl;
+		if(match(x, P, dimP, distanza, lim2, lim3)){
 			n_match++;
-			//x=x+dimP*lim3;
+			//OUT << "match va";
 			jump=dimP;
+			//OUT << " jump :" <<jump << endl;
 		}
 		else{
-			//x=x+lim3;
+			//OUT << "match non va ";
 			jump=1;
+			//OUT << " jump : " <<jump << endl;
 		}
-		return n_match;	
+	}
+	return n_match;	
 }
 
 int main(){
-	ifstream IN("input.txt");
+	ifstream IN("input");
 	ofstream OUT("output");
 	
 	if(IN && OUT){
@@ -88,7 +83,7 @@ int main(){
 	else{
 		if(nrp<lim2)
 			hfmax = nrp;
-		else hfmax = lim3;
+		else hfmax = lim2;
 	} 
 		
 	int lung = nsp*lim3;
@@ -96,10 +91,9 @@ int main(){
 	for(int i=0; i < hfmax; i++){
 		if(i<nrpus)
 			lung=lung+lim3;
-		else if(i ==nrpus+1 || (i==0 && nrpus ==0))
+		else if(i ==nrpus)
 			lung = lung+rim;
-		//match = contaMatch(x+(i*lim3),lung, i, lim1, lim2, lim3,P,dimP, OUT);
-		match = contaMatch(x, i, lung,lim1, lim2, lim3,P,dimP, n_el, OUT);
+		match = contaMatch(x, i, lung,lim2, lim3,P,dimP);
 		OUT << "H-fetta " << i << " = " << match << " match" << endl;
 		match=0;
 		lung = nsp*lim3;
