@@ -39,14 +39,11 @@ void win(int B[][7], ofstream& out){
 	
 }
 
-void steal(int B[][7], int p, int b, ofstream& OUT){
-	//OUT << "steal"<<endl;
-	//OUT << "i: "<< p;
-	int k = reversePlayer(p);
-	//OUT << "k: " << k <<endl;
-	int add = B[k][b]+1;
-	B[k][b] =0;
-	B[k][6] += add;
+void steal(int B[][7], int player, int p, int b){
+	int pos = reversePlayer(p);
+	int add = B[pos][6-(b+1)]+1;
+	B[pos][6-(b+1)] =0;
+	B[player][6] += add;
 }
 
 bool checkMossa(int B[][7], int p, int b, ofstream& OUT){
@@ -85,27 +82,17 @@ void stampa(int B[][7], ofstream & OUT){
 /*PRE=(B contiene 14 valori non negativi, player=0/1, buca in [0..5], fagioli>0.
 Chiamiamo old_B il valore di B all'invocazione della funzione)*/
 
-bool semina(int B[][7], int player, int buca, int fagioli,ofstream& OUT){
-	bool cambio = true, inverti = false;
-	int p = player, add=0, k, pos; //add fagioli da aggiungere
+bool semina(int B[][7], int player, int buca, int fagioli){
+	bool cambio = true;
+	int p = player; 
 	B[player][buca] = 0; //svuoto la buca
 while(fagioli >0){
 	for(int i=player; i<2 && fagioli >0; i++)
 		for(int j=buca+1; j<7 && fagioli >0; j++)
 			if(j !=6){
 				if(fagioli ==1 && B[i][j]==0){
-					pos = reversePlayer(i);
-					add = B[pos][6-(j+1)]+1;
-					B[pos][6-(j+1)] =0;
-					B[p][6] += add;
-					//if(!inverti){
-						//steal(B,i,j,OUT);
-						fagioli--;
-					//}
-					//else{
-					//	B[p][6]=B[p][6]+1;
-						//fagioli--;
-					//}
+					steal(B,p,i,j);
+					fagioli--;
 				}
 				else{
 					(B[i][j])++;
@@ -121,7 +108,6 @@ while(fagioli >0){
 				}
 				player=reversePlayer(player);
 				buca=-1;
-				//inverti = true;
 			}
 			
 }
@@ -150,7 +136,7 @@ main(){
 			if(checkMossa(B,p,b, OUT)){
 				if(B[p][b] !=0){
 					fagioli = B[p][b];
-					cambio = semina(B, p, b, fagioli, OUT);
+					cambio = semina(B, p, b, fagioli);
 					termina = checkFine(B,p);
 					stampa(B, OUT);
 					if(termina){
