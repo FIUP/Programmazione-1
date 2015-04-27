@@ -1,4 +1,4 @@
-/*Integrazione sei crediti*/ 
+/*Integrazione sei crediti Funzionante secondo le regole del pdf*/ 
 #include<iostream>
 #include<fstream>
 using namespace std;
