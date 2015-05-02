@@ -5,11 +5,9 @@
 using namespace std;
 
 bool fin(int *x, int i, int *P, int dimP){
-	int j =0;
 	if(dimP){
-		if(x[i] != P[j]){
+		if(x[i] != P[0])
 			return false;
-		}
 		else 
 			return fin(x, i+1, P+1, dimP-1);
 	}
