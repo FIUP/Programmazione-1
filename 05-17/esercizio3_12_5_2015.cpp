@@ -19,13 +19,28 @@ nodo* crea(int dim,ifstream & IN){
 	int x;
 	IN >> x;
 	return new nodo(x, crea(dim-1,IN));
+	
 }
 
+nodo* del_z(nodo* n, int z){
+	
+	if(!n)
+		return NULL;
+
+	if(n->info == z){
+		nodo *p = n;
+		n = del_z(n->next,z);
+		delete p;
+	}
+	else
+		n->next = del_z(n->next,z);
+	return n;
+}
 void stampa(nodo* L, ofstream& OUT){
 	if(!L)
-		OUT << "fine";
+		OUT << "fine"<<endl ;
 	else{
-		OUT << L->info << " ";
+		OUT << L->info << "->";
 		stampa(L->next, OUT);
 	}
 }
@@ -35,11 +50,14 @@ main(){
 	ofstream OUT("output");
 	
 	if(IN && OUT){
-		int dim;
+		int dim,z;
 		nodo* L;
 	
 		IN >> dim;
 		L = crea(dim, IN);	
+		//stampa(L,OUT);
+		IN >> z;
+		L = del_z(L,z);
 		stampa(L, OUT);
 	
 		IN.close();
