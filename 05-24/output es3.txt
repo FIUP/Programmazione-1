@@ -1,0 +1,19 @@
+1(2(4(8(_,_),_),6(10(_,_),_)),3(5(9(_,_),_),7(1(_,_),_)))
+
+cont = 11 k= 2 r->info = 1 k dopo = 1
+cont = 5 k= 1 r->info = 2 k dopo = 1
+cont = 2 k= 1 r->info = 4 k dopo = 1
+cont = 1 k= 1 r->info = 8 k dopo = 1
+FOGLIA
+cont = 2 k= 1 r->info = 6 k dopo = 1
+cont = 1 k= 1 r->info = 10 k dopo = 1
+FOGLI
+cont = 5 k= 1 r->info = 3 k dopo = 1
+cont = 2 k= 1 r->info = 5 k dopo = 1
+cont = 1 k= 1 r->info = 9 k dopo = 1
+FOGLIA
+cont = 2 k= 1 r->info = 7 k dopo = 1
+cont = 1 k= 1 r->info = 1 k dopo = 0
+FOGLIA
+true con cammino=1 1 0 fine cammino
+
