@@ -16,15 +16,9 @@ struct FIFO{
 
 FIFO togli_primo(FIFO x){
 	
-	if(!x.primo){
-		x.fine = x.primo;
-		return 0;
-	}
-	
 	if(!x.primo->next){	
-		punt*p = x.primo;
-		delete p;
-		return 0;
+		delete x.primo;
+		return FIFO();
 	}
 	
 	punt* p = x.primo;
@@ -35,15 +29,16 @@ FIFO togli_primo(FIFO x){
 
 FIFO metti_fondo(FIFO x, nodo*a){
 	
-	if(!x.primo){
-		x.primo = new punt(a,0);
+	if(!x.fine){
+		x.primo = new punt(a);
 		x.fine = x.primo;
+		return x;
 	}
 	else {
-		x.fine->next = new punt(a,0);
+		x.fine->next = new punt(a);
 		x.fine = x.fine->next;
+		return x;
 	}
-	return x;
 }
 
 void stampa_l(nodo *r){
