@@ -21,6 +21,18 @@ main(){
 			default: {cout << x << endl;}
 	}
 }
+/*Il costruttore enum assegna i valori standard
+bianco = 0,
+nero = 1,
+giallo = 2,
+rosso = 3,
+azzurro = 4
+
+All'entrata del ciclo for, nella dichiarazione, x vale 0 e, fintanto che non è minore o uguale a 4 viene incrementato.
+Successivamente allo switch per i valori 0, 1 e 2 (!= rosso = 3) vengono stampati tali valori, mentre quando x vale 3 
+(ovvero rosso) si esce dallo switch senza stampare nulla, ma rimanendo sempre all'interno del for che porta, all'ultima 
+interazione, a stampare il valore 4 (azzurro).*/
+
 3) //PRE F1 = L lista corretta, eventualmente vuota
 int F1(nodo *L){
 	if(L) 
