@@ -44,32 +44,22 @@ PRE=(lista(C) è corretta)*/
 nodo* no_rip(nodo*C){
 	if(!C)									//lista vuota niente da togliere
 		return 0;
-	
-	C->next=no_rip(C->next);	   			//ricollego la lista a C
-	nodo* resto=togli(C->next,C->info);		//tolgo dalla lista tutti i nodi con campo info = C->info
-	if(resto){								//se resta qualche nodo								
-		C->next=resto;						//lo collego alla lista d'origine C
-		return C;							//e la ritorno
-		}
-	else{									//altrimenti abbiamo eliminato tutto
-		if(C->next)							//se la lista continua, saranno tutti elementi da scartare
-			C->next=0;						//chiudiamo C
+	C->next=togli(C->next,C->info);
+	no_rip(C->next);	   			//ricollego la lista a C
 		return C;							//e ritorniamo
-	}
-} 
+}
 /*POST=(restituisce quello che resta di C mantenendo solo il primo nodo con un dato campo info ed
 eliminando i nodi successivi con lo stesso campo info. I nodi tolti da C sono deallocati. Nessun nuovo nodo
 rispetto a C è allocato)
 
 PRE = T, C liste corrette eventualmente vuote*/
 void elim(nodo*&T, nodo*C){
-	while(T && C){							//finché ci sono elementi in T ed in C 
-	T=togli(T,C->info);						//assegniamo a T il valore restituito dall'invocazione di togli
-	C=C->next;								//e  portiamo avanti la lista C
+	while(T && C){
+	T=togli(T,C->info);
+	C=C->next;
 	}
 }
 
-/*POST = elimina da T (deallocandoli) tutti quei nodi che hanno campo info uguale ad un nodo di C*/
 
 void stampa_L(nodo* x,ofstream& OUT){
 	if(x){
