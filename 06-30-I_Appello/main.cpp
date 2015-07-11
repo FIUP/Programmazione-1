@@ -7,35 +7,35 @@ struct nodo{int info; nodo* next; nodo(int a=0, nodo* b=0){info=a; next=b;}};
 struct FIFO{nodo* primo, *fine; FIFO(nodo*a=0, nodo*b=0){primo=a; fine=b;}}; 
 
 FIFO metti_fondo(FIFO a, nodo*b){
-  if(!a.fine){							//se coda vuota
-    a.primo =b;							//primo punta al nodo da pushare
-    a.fine = a.primo;					//fine e primo coincidono, c'è un unico nodo
-    return a;							//ritorniamo la coda
+  if(!a.fine){								//se coda vuota
+    a.primo =b;								//primo punta al nodo da pushare
+    a.fine = a.primo;						//fine e primo coincidono, c'è un unico nodo
+    return a;								//ritorniamo la coda
   }
-  else{									//altrimenti se la coda non è vuota
-    a.fine->next = b;					//pushiamo in fondo il nuovo nodo 
-    a.fine = a.fine->next;				//spostiamo il puntatore alla fine della coda all'ultimo nodo
-    return a;							//ritorniamo la  testa della coda
+  else{										//altrimenti se la coda non è vuota
+    a.fine->next = b;						//pushiamo in fondo il nuovo nodo 
+    a.fine = a.fine->next;					//spostiamo il puntatore alla fine della coda all'ultimo nodo
+    return a;								//ritorniamo la  testa della coda
   }
 } 
 
 //PRE=(lista(C) è corretta e y è definito)
 nodo* togli(nodo*C, int y){
-	FIFO F;								//creiamo una coda vuota
-	while(C){							//finché c'è roba nella lista C
-        if(C->info==y){					//Se il campo info del nodo è uguale a y
-            nodo* p=C;					//creiamo un puntatore al nodo da eliminare
-            C=C->next;					//portiamo avanti la lista C (per confrontare il prossimo nodo)
-            delete p;					//eliminiamo il nodo puntato da p
+	FIFO F;									//creiamo una coda vuota
+	while(C){								//finché c'è roba nella lista C
+        if(C->info==y){						//Se il campo info del nodo è uguale a y
+            nodo* p=C;						//creiamo un puntatore al nodo da eliminare
+            C=C->next;						//portiamo avanti la lista C (per confrontare il prossimo nodo)
+            delete p;						//eliminiamo il nodo puntato da p
         }
-        else{							//se C->info non è uguale a y
-            F=metti_fondo(F,C);			//pushiamo C in fondo alla coda 
-            C=C->next;					//e portiamo avanti la lista
-        }								//una volta passata tutta la lista, la coda sarà in ordine
+        else{								//se C->info non è uguale a y
+            F=metti_fondo(F,C);				//pushiamo C in fondo alla coda 
+            C=C->next;						//e portiamo avanti la lista
+        }									//una volta passata tutta la lista, la coda sarà in ordine
 	}
-	if(F.fine)							//se il puntatore al fondo coda non è vuoto
-		F.fine->next=0;					//ci assicuriamo che punti all'ultimo elemento troncando gli altri
-	return F.primo;						//ritorniamo la testa della coda 
+	if(F.fine)								//se il puntatore al fondo coda non è vuoto
+		F.fine->next=0;						//ci assicuriamo che punti all'ultimo elemento troncando gli altri
+	return F.primo;							//ritorniamo la testa della coda 
 }
 /*POST=(restituisce la lista che resta eliminando da C i nodi con campo info=y che vengono deallocati. Nessun
 nodo nuovo rispetto a C è allocato)

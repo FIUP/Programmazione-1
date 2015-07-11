@@ -38,14 +38,12 @@ using namespace std;
 int S(int* X, int i){
 	int conta=0, j;
 
-	for(j=0; X[j] !=-2 && conta <i; j++){
-		/*(X[0..j-1] sono diversi da -2) &&
-		(conta = numero di -1 trovati in X[0..j-1])*/
-		if(X[j] ==-1)
+	for(j=0; X[j] !=-2 && conta <i; j++){						//(X[0..j-1] sono diversi da -2) &&
+		if(X[j] ==-1)											//(conta = numero di -1 trovati in X[0..j-1])
 			conta++;
 	}
 
-	if (conta == i) {
+	if (conta == i) {											
 		if(X[j] ==-2)
 			return -2;
 		else return j;

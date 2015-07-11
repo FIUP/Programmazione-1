@@ -3,34 +3,34 @@
 #include<fstream>
 using namespace std;
 
-int reversePlayer(int player){
-	if(player)			//non è player 0
-		player =0;		//diventa player 0
-	else				// è player 0
-		player=1;		//cambia
-	return player;
+int reversePlayer(int player){								//inverte il giocatore
+	if(player)												//non è player 0
+		player =0;											//diventa player 0
+	else													// è player 0
+		player=1;											//cambia
+	return player;											//e ritorna il nuovo giocatore
 }
 
-bool checkFine(int B[][7], int p){
-	bool vuoto =true;
-	for(int j=0; j<6; j++){
-		if(B[p][j] != 0)
-			vuoto = false;
+bool checkFine(int B[][7], int p){							//controlla se la partita termina
+	bool vuoto =true;										//tramite un bool
+	for(int j=0; j<6; j++){									//passiamo un lato della tavola
+		if(B[p][j] != 0)									//se in almeno una buca ci sono ancora fagioli
+			vuoto = false;									//non è terminata
 	}
-	return vuoto;
+	return vuoto;											
 }
 
-void chiudi(int B[][7], int p){
-	p = reversePlayer(p);
-	for(int i=0; i<6; i++){
-		if(B[p][i] != 0){
-			B[p][6] += B[p][i];
-			B[p][i] = 0;
+void chiudi(int B[][7], int p){								//chiude la partita
+	p = reversePlayer(p);									//giriamo la tavola
+	for(int i=0; i<6; i++){									//passiamo tutte le buche piccole
+		if(B[p][i] != 0){									//se ci sono fagioli rimanenti
+			B[p][6] += B[p][i];								//li aggiungiamo al granaio di quel giocatore
+			B[p][i] = 0;									//e svuotiamo le buche piccole
 		}
 	}
 }
 
-void win(int B[][7], ofstream& out){
+void win(int B[][7], ofstream& out){						//decreta il vincitore se c'è oppure patta, specificando il numero di fagioli
 	if(B[0][6] > B[1][6])
 		out << "vince il giocatore 0 con " << B[0][6] << " fagioli, mentre il giocatore 1 ne ha " << B[1][6]<<endl;
 	else if(B[1][6] > B[0][6])
@@ -39,28 +39,28 @@ void win(int B[][7], ofstream& out){
 	
 }
 
-void steal(int B[][7], int player, int p, int b){
-	int pos = reversePlayer(p);
-	int add = B[pos][6-(b+1)]+1;
-	B[pos][6-(b+1)] =0;
-	B[player][6] += add;
+void steal(int B[][7], int player, int p, int b){				//ruba i fagioli dalla buca dell'avversario
+	int pos = reversePlayer(p);									//gira la tavola
+	int add = B[pos][6-(b+1)]+1;								//calcola i fagioli da aggiungere al granaio
+	B[pos][6-(b+1)] =0;											//svuota la buca dell'avversario
+	B[player][6] += add;										//e aggiunge al granaio del giocatore
 }
 
-bool checkMossa(int B[][7], int p, int b, ofstream& OUT){
-	bool corretta = true;
-	if(p !=0 && p !=1)
-		corretta=false;
-	else
-		if(b >5 || b <0)
-			corretta = false;
+bool checkMossa(int B[][7], int p, int b, ofstream& OUT){		//controlla se la mossa è valida
+	bool corretta = true;										//tramite un bool
+	if(p !=0 && p !=1)											//se non è ne il giocatore 0, ne il giocatore 1
+		corretta=false;											//la mossa non è corretta
+	else														//altrimenti
+		if(b >5 || b <0)										//se non si sceglie una buca piccola
+			corretta = false;									//la mossa non è corretta
 			
-	if(B[p][b] == 0)
-		corretta = false;
+	if(B[p][b] == 0)											//se la buca scelta non ha fagioli
+		corretta = false;										//la mossa non è corretta
 	
-	return corretta;
+	return corretta;											//ritorniamo il bool
 }
 
-void stampa(int B[][7], ofstream & OUT){
+void stampa(int B[][7], ofstream & OUT){						//La solita funzione di stampa, stavolta solo su file
 	//cout<<"("<<B[0][6]<<")\t";
 	OUT<<B[0][6]<<" ";
 	for(int j=5; j>=0; j--){
@@ -82,12 +82,12 @@ void stampa(int B[][7], ofstream & OUT){
 /*PRE=(B contiene 14 valori non negativi, player=0/1, buca in [0..5], fagioli>0.
 Chiamiamo old_B il valore di B all'invocazione della funzione)*/
 
-bool semina(int B[][7], int player, int buca, int fagioli){
-	bool cambio = true;
+bool semina(int B[][7], int player, int buca, int fagioli){		//La funzione di semina come su bantumi 2
+	bool cambio = true;											//ma facendo uso di funzioni ausiliarie
 	int p = player; 
-	B[player][buca] = 0; //svuoto la buca
-while(fagioli >0){
-	for(int i=player; i<2 && fagioli >0; i++)
+	B[player][buca] = 0; 										
+while(fagioli >0){												
+	for(int i=player; i<2 && fagioli >0; i++)				
 		for(int j=buca+1; j<7 && fagioli >0; j++)
 			if(j !=6){
 				if(fagioli ==1 && B[i][j]==0){
@@ -137,11 +137,11 @@ main(){
 				if(B[p][b] !=0){
 					fagioli = B[p][b];
 					cambio = semina(B, p, b, fagioli);
-					termina = checkFine(B,p);
-					stampa(B, OUT);
-					if(termina){
-						chiudi(B,p);
-						win(B,OUT);
+					termina = checkFine(B,p);						//controlla se la partita termina
+					stampa(B, OUT);	
+					if(termina){									//se termina
+						chiudi(B,p);								//chiude la partita
+						win(B,OUT);									//decretando un vincitore oppure patta
 					}
 
 					if(cambio){
