@@ -11,19 +11,19 @@ struct nodo{
 		next=b;}
 };
 
-nodo* crea_inv(int dim,ifstream & IN){
+nodo* crea_inv(int dim,ifstream & IN){				//crea la lista nell'ordine inverso rispetto a quello di lettura
 	
-	if(!dim){
-		return NULL;
-	}
+	if(!dim){										//se la lista è vuota
+		return NULL;								//ritorniamo null
+	}												//altrimenti
 	
-	nodo *n= new nodo();
-	n->next = crea_inv(dim-1,IN); 
-	IN >> n->info;
-	return n;
+	nodo *n= new nodo();							//creiamo un nuovo nodo vuoto
+	n->next = crea_inv(dim-1,IN); 					//impostiamo il suo next tramite una chiamata ricorsiva (verrà impostato al ritorno)
+	IN >> n->info;									//ci inseriamo il campo info letto dal file di input
+	return n;										//e lo ritorniamo
 }
 
-void stampa(nodo* L, ofstream& OUT){
+void stampa(nodo* L, ofstream& OUT){				//la funzione di stampa, come nell'esercizio precedente
 	if(!L)
 		OUT << "fine";
 	else{
@@ -40,8 +40,8 @@ main(){
 		int dim;
 		nodo* L;
 	
-		IN >> dim;
-		L = crea_inv(dim, IN);	
+		IN >> dim;		
+		L = crea_inv(dim, IN);						//stavolta creiamo la lista nell'ordine inverso rispetto a quello di lettura
 		stampa(L, OUT);
 	
 		IN.close();

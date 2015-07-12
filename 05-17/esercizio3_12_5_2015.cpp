@@ -11,7 +11,7 @@ struct nodo{
 		next=b;}
 };
 
-nodo* crea(int dim,ifstream & IN){
+nodo* crea(int dim,ifstream & IN){							//crea la lista come nell'es. 1 di questa settimana
 	
 	if(!dim)
 		return NULL;
@@ -22,21 +22,21 @@ nodo* crea(int dim,ifstream & IN){
 	
 }
 
-nodo* del_z(nodo* n, int z){
+nodo* del_z(nodo* n, int z){								//elimina dalla lista tutti i nodi con campo info = z
 	
-	if(!n)
-		return NULL;
-
-	if(n->info == z){
-		nodo *p = n;
-		n = del_z(n->next,z);
-		delete p;
-	}
-	else
-		n->next = del_z(n->next,z);
-	return n;
+	if(!n)													//se la lista è vuota
+		return NULL;										//non possiamo eliminare niente e ritorniamo null
+															//altrimenti 
+	if(n->info == z){										//se il campo info è uguale a z
+		nodo *p = n;										//creiamo un puntatore al nodo che deve essere eliminato
+		n = del_z(n->next,z);								//portiamo avanti ricorsivamente la lista (riassegnando il valore ritornato alla lista stessa)
+		delete p;											//eliminiamo il nodo puntato da p
+	}														
+	else													//altrimenti, se info non è uguale a z
+		n->next = del_z(n->next,z);							//il nodo va tenuto e assegnamo al suo campo next il risultato dell'invocazione ricorsiva sul resto della lista
+	return n;												//e ritorniamo la lista 
 }
-void stampa(nodo* L, ofstream& OUT){
+void stampa(nodo* L, ofstream& OUT){						//stampa la lista come negli es. precedenti
 	if(!L)
 		OUT << "fine"<<endl ;
 	else{
