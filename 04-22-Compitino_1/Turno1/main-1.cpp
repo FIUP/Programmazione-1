@@ -39,36 +39,36 @@ Cosa stampa?
 using namespace std;
 struct tripla{int prof, riga, colonna; tripla(int a=0, int b=0, int c=0){prof=a; riga=b; colonna=c;}}; //per modellare posizione in sotto-array
 
-tripla ritornaPos(int index, int l, int h, int lim1, int lim2, int lim3){
-	int lungvf = lim1*h;
-	int colonna = index/lungvf;
-	if(index >= lungvf){
-		index -=colonna*lungvf;
+tripla ritornaPos(int index, int l, int h, int lim1, int lim2, int lim3){	//ritorna la posizione dell'elemento da matchare dove l è la lunghezza del sottoarray e h la sua altezza
+	int lungvf = lim1*h;													//calcoliamo la lunghezza di una v-fetta (numero di strati*altezza sottoarray)
+	int colonna = index/lungvf;												//calcoliamo la colonna
+	if(index >= lungvf){													//se l'indice è maggiore o uguale alla lunghezza della v-fetta
+		index -=colonna*lungvf;												//lo aggiustiamo per far quadrare i conti
 	}
-	int strato = index/h;
-	int rimus = index%(l*h);
-	int riga = rimus%h;
+	int strato = index/h;													//dividendo index per h otteniamo in quale strato siamo
+	int rimus = index%(l*h);												//calcoliamo gli elementi rimanenti dell'ultimo strato
+	int riga = rimus%h;														//e la riga 
 
-	tripla pos(strato, riga, colonna);
-	return pos;
+	tripla pos(strato, riga, colonna);										//mettiamo il tutto in una tripla
+	return pos;																//e la ritorniamo
 }
 
 bool match (int*X, int r, int c, int h, int l, int lim1, int lim2, int lim3, int* P, int dimP, int e, ofstream& out){
-    int inizio = r*lim3+c;	//distanza iniziale del primo elemento dell'array
-	tripla pos = ritornaPos(e, l, h, lim1, lim2, lim3);
-	int dist = inizio + pos.prof*(lim2*lim3)+pos.riga*(lim3)+pos.colonna;
+    int inizio = r*lim3+c;														//distanza iniziale del primo elemento dell'array
+	tripla pos = ritornaPos(e, l, h, lim1, lim2, lim3);							//calcoliamo la tripla riferita all'elemento da considerare
+	int dist = inizio + pos.prof*(lim2*lim3)+pos.riga*(lim3)+pos.colonna;		//e la usiamo per calcolare la distanza dall'inizio di X
 	//out << e << " pos strato " << pos.prof << ", riga " << pos.riga << ", colonna " << pos.colonna << " distanza "<< dist << endl;
-	int i=e;
-	bool ok = true;
-	for(int j = 0; j < dimP && ok; j++){
-		if(X[dist] != P[j]){
-			ok = false;
+	int i=e;																	//e ultima posizione valida per il match
+	bool ok = true;																//impostiamo un bool per interrompere prima il ciclo, se serve
+	for(int j = 0; j < dimP && ok; j++){										//finché c'è pattern da  cercare
+		if(X[dist] != P[j]){													//se l'elemento considerato non coincide con quello del pattern da matchare
+			ok = false;															//ci fermiamo
 		}
-		else{
+		else{																	//altrimenti
 			//out << " elemento trovato = " << X[dist] << " p " << P[j] << " distanza "<< dist << " "; 
-			i++;;
-			pos = ritornaPos(i,l,h,lim1,lim2,lim3);
-			dist = inizio + pos.prof*(lim2*lim3)+pos.riga*(lim3)+pos.colonna;
+			i++;;																//incrementiamo l'indice
+			pos = ritornaPos(i,l,h,lim1,lim2,lim3);								//calcoliamo la posizione del successivo tramite ritornaPos
+			dist = inizio + pos.prof*(lim2*lim3)+pos.riga*(lim3)+pos.colonna;	//e ricalcoliamo la distanza dall'inizio di X
 			//out << e << " pos succ: " << pos.prof << " pos riga " << pos.riga << " pos colonna " << pos.colonna <<endl;
 		}
     }
@@ -98,24 +98,24 @@ main(){
 //pattern match sul sottoarray  pieno con ordinamento per V-fette 
 
    //inizializzazione
-    int dimSA = lim1*h*l;
-    int matchvf=0;
-	int jump=1;
+    int dimSA = lim1*h*l;													//imposta la dimensione del sotto-array
+    int matchvf=0;															//matchvf conta quanti match ci sono nella v-fetta
+	int jump=1;																//jump è l'incremento del ciclo
 	
    //for(esame elementi del sotto-array in ordine per  V-fette da cui può iniziare un match con P)
-	for(int e = 0; e < (dimSA-dimP)+1; e+=jump){
-		if(match(X,r,c,h,l,lim1,lim2,lim3,P,dimP,e, OUT)){ 
-			matchvf++;
-			OUT<<"trovato match a partire dall'elemento "<<e<<endl;
-			jump = dimP;
+	for(int e = 0; e < (dimSA-dimP)+1; e+=jump){							//navighiamo nel sotto-array
+		if(match(X,r,c,h,l,lim1,lim2,lim3,P,dimP,e, OUT)){ 					//se c'è match nella v-fetta
+			matchvf++;														//incrementiamo il contatore
+			OUT<<"trovato match a partire dall'elemento "<<e<<endl;			//e stampiamo dove inizia
+			jump = dimP;													//i match devono essere non sovrapposti quindi saltiamo dimP posizioni
 		}
-		else{ 
-			OUT<<"a partire dall'elemento "<<e<<" non c'e' match"<<endl;
-			jump=1;
+		else{ 																//altrimenti se non c'è match
+			OUT<<"a partire dall'elemento "<<e<<" non c'e' match"<<endl;	//stampiamo un messaggio
+			jump=1;															//e controlliamo dalla prossima posizione
 		}
-	}
-	OUT<<"n. totale match="<< matchvf <<endl;
-    IN.close(); OUT.close(); 
+	}	
+	OUT<<"n. totale match="<< matchvf <<endl;								//stampiamo il numero totale di match trovati
+    IN.close(); OUT.close(); 												//e chiudiamo i file
   }
   else
    cout<<"errore con i files";

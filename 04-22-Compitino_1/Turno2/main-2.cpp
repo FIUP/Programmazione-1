@@ -1,4 +1,5 @@
-/*Integrazione sei crediti parte di correttezza non inclusa*/
+/*Integrazione sei crediti parte di correttezza non inclusa
+Essendo molto simile al primo compitino si rimanda ai commenti di quello*/
 #include<iostream>
 #include<fstream>
 using namespace std;

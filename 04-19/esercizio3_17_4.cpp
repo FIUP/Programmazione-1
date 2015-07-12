@@ -1,5 +1,5 @@
 /*Integrazione sei crediti
-condiviso sul gruppo facebook FIUP, non sviluppato da me*/
+condiviso sul gruppo facebook FIUP, non sviluppato da me, quindi non commentato*/
 #include<iostream>
 #include<fstream>
 using namespace std;
