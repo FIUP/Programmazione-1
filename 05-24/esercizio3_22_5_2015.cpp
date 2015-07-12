@@ -5,19 +5,19 @@ using namespace std;
 
 struct nodo{int info; nodo* left,*right; nodo(int a=0, nodo* b=0, nodo*c=0){info=a; left=b;right=c;}};
 
-void stampa_l(nodo *r){
-	if(r){
-		cout<<r->info<<'(';
-		stampa_l(r->left);
-		cout<<',';
-		stampa_l(r->right);
-		cout<<')';
+void stampa_l(nodo *r){										//stampa l'albero in forma lineare su output standard
+	if(r){													//se ci sono nodi
+		cout<<r->info<<'(';									//stampiamo il campo info e una parentesi aperta 
+		stampa_l(r->left);									//stampiamo il sotto albero sinistro
+		cout<<',';											//una virgola
+		stampa_l(r->right);									//e stampiamo il sottoalbero destro
+		cout<<')';											//chiudiamo la parentesi
     }
-	else
-		cout<< '_';
-}//Stampa l'albero su input standard
+	else													//se l'albero non ha nodi
+		cout<< '_';											//stampiamo un underscore _
+}
 
-void stampa_lf(nodo *r, ofstream& out){
+void stampa_lf(nodo *r, ofstream& out){						//come la funzione precedente, ma stampa su file
 	if(r){
 		out<<r->info<<'(';
 		stampa_lf(r->left,out);
@@ -27,74 +27,74 @@ void stampa_lf(nodo *r, ofstream& out){
     }
 	else
 		out<< '_';
-}//Stampa l'albero su file
-
-int conta_n(nodo*r){
-	if(!r) 
-		return 0;
-	else
-		return conta_n(r->left)+conta_n(r->right)+1;
-}//Conta i nodi
-
-nodo* insert(nodo*r, int y){
-	if(!r) 
-		return new nodo(y);
-   
-	if(conta_n(r->left)<=conta_n(r->right))
-		r->left=insert(r->left,y);
-	else   
-		r->right=insert(r->right,y); 
-	return r;
-}//Costruisce l'albero
-
-nodo* rep_ins(nodo*r, int dim, ifstream & INP){
-	if(dim){
-		int z;
-		INP>>z;
-		nodo*x=insert(r,z);
-		return rep_ins(x,dim-1,INP);
-	}
-	return r;
-}//Ripete l'inserimento
-
-void sc(int*C, ofstream & OUT){
-	if(*C!=-1){
-		OUT<<*C<<' '; 
-		sc(C+1,OUT);}
-	else
-		OUT<<"fine cammino"<<endl;
-}//Stampa cammino
-
-bool leaf(nodo*x){
-	if(!x->left && !x->right)
-		return true;
-	else return false;
 }
 
-/*PRE_cerca=(albero(r) è corretto e non vuoto, k>=0 e y valore qualsiasi, C ha almeno tanti elementi quanta è
+int conta_n(nodo*r){										//conta i nodi dell''albero
+	if(!r) 													//se l'albero è vuoto
+		return 0;											//ha zero nodi
+	else													//altrimenti 
+		return conta_n(r->left)+conta_n(r->right)+1;		//ha un nodo più i nodi del suo sottoalbero sinistro, più quelli del sottoalbero destro
+}
+
+nodo* insert(nodo*r, int y){								//Costruisce l'albero, inserendo i nodi in modo bilanciato
+	if(!r) 													//se l'albero è vuoto
+		return new nodo(y);									//crea la radice, unico nodo
+															//altrimenti
+	if(conta_n(r->left)<=conta_n(r->right))					//se i nodi del sottoalbero sinistro sono meno (o pari) al destro 
+		r->left=insert(r->left,y);							//inseriamo il nuovo nodo nel sottoalbero sinistro
+	else   													//altrimenti
+		r->right=insert(r->right,y); 						//lo inseriamo nel sottoalbero destro
+	return r;												//e ritorniamo l'albero creato
+}
+
+nodo* rep_ins(nodo*r, int dim, ifstream & INP){				//Ripete l'inserimento, inserendo dim nodi letti dal file di input
+	if(dim){												//se ci sono nodi da inserire
+		int z;												//creiamo un intero
+		INP>>z;												//leggiamo il valore dal file di input
+		nodo*x=insert(r,z);									//in un puntatore a nodo invochiamo insert che inserisce in modo bilanciato il nuovo valore
+		return rep_ins(x,dim-1,INP);						//e invochiamo ricorsivamente rep_ins
+	}														//altrimenti se non ci sono più valori da leggere
+	return r;												//ritorniamo l'albero
+}
+
+void sc(int*C, ofstream & OUT){								//Stampa cammino
+	if(*C!=-1){												//se il passo del cammino è diverso da -1
+		OUT<<*C<<' '; 										//stampiamo il suo valore
+		sc(C+1,OUT);}										//e invochiamo ricorsivamente sc sul prossimo elemento di C
+	else													//altrimenti
+		OUT<<"fine cammino"<<endl;							//abbiamo finito
+}
+
+bool leaf(nodo*x){											//stabilisce se un nodo è foglia
+	if(!x->left && !x->right)								//se non ha sottoalberi sinistri o destri
+		return true;										//è foglia 
+	else return false;										//sennò no
+}
+
+/*PRE_cerca=(albero(r) è corretto e non vuoto, k>=0 e y valore qualsiasi, C ha almeno tanti elementi quant è
 l'altezza di albero(r))*/
-bool cerca_cam(nodo*r, int k, int y, int *C){
-	int cont = conta_n(r);
+bool cerca_cam(nodo*r, int k, int y, int *C){				
+	int cont = conta_n(r);									//cont conta i nodi dell'albero
 		
-	if(cont <k)
-		return false;
+	if(cont <k)												//se sono meno di k
+		return false;										//il cammino cercato non c'è
 	
-	if(r->info ==y)
-		k--;
+	if(r->info ==y)											//se info è = a y
+		k--;												//scaliamo uno da k
 
-	if(k==0 && leaf(r)){
-		*C=-1;
-		return true;
-	}
+	if(k==0 && leaf(r)){									//se k vale zero e il nodo è una foglia
+		*C=-1;												//chiudiamo il cammino 
+		return true;										//e ritorniamo true, lo abbiamo trovato
+	}														//altrimenti
 
-	if(r->left && cerca_cam(r->left, k,y,C+1)){
-		*C =0;
-		return true;
-	}
+	if(r->left && cerca_cam(r->left, k,y,C+1)){				//se c'è un sottoalbero sinistro e c'è un cammino nel sottoalbero sinistro
+		*C =0;												//andiamo a sinistra
+		return true;										//e ritorniamo true
+	}														//altrimenti
 	
-	if(r->right && cerca_cam(r->right, k,y,C+1)){
-		*C=1;
-		return true;
+	if(r->right && cerca_cam(r->right, k,y,C+1)){			//se c'è un sottoalbero destro e un cammino nel sottoalbero destro
+		*C=1;												//andiamo a destra
+		return true;										//e ritorniamo true
 	}
 
 }
