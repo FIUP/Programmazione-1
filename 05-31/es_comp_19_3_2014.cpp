@@ -17,22 +17,22 @@ void stampa_l(nodo *r, ofstream & OUT){
 }
 
 //PRE = C[x...] contiene un cammino terminato da -1
-int scorri(int* C, int x){
-	while(C[x]!=-1)
-		x++;
-  return x+1;
+int scorri(int* C, int x){											//x è un indice
+	while(C[x]!=-1)													//finché C[x] non vale -1
+		x++;														//il cammino continua
+  return x+1;														//e ritorniamo l'indice della prima posizione del prossimo cammino
   
 }
 /*POST = restituisce la posizione in C immediatamente dopo il cammino che inizia in C[x]*/
 
-int inizio_cam(int* C, int i){
-	int x = 0;
-	for(int count =0; (count <i && C[x] !=-2); count++)
-		x= scorri(C,x);
-	if(C[x] !=-2)
-		return x;
-	else 
-		return -2;
+int inizio_cam(int* C, int i){										//i è un'indice
+	int x = 0;														//
+	for(int count =0; (count <i && C[x] !=-2); count++)				//
+		x= scorri(C,x);												//
+	if(C[x] !=-2)													//
+		return x;													//
+	else 															//
+		return -2;													//
 }
 
 void add_iter(int*C, nodo*& r,ifstream& INP, ofstream& OUT){
@@ -115,26 +115,25 @@ void add_ric(int* C, nodo*& r, ifstream & INP, ofstream & OUT){
 	}
 }
 
-nodo* build_ric(int*C, nodo* r, ifstream & INP, ofstream & OUT){
-	bool fine=false;
-	for(int i=0; !fine ; i++){
-		int j=inizio_cam(C,i);
-		if(j==-2)
-			fine=true;
-		else
-			add_ric(C+j, r, INP, OUT);
-	}
-	return r;
+nodo* build_ric(int*C, nodo* r, ifstream & INP, ofstream & OUT){	//costruisce un albero in base al cammino
+	bool fine=false;												//
+	for(int i=0; !fine ; i++){										//
+		int j=inizio_cam(C,i);										//
+		if(j==-2)													//
+			fine=true;												//
+		else														//
+			add_ric(C+j, r, INP, OUT);								//
+	}						
+	return r;														//
 }
-
-
-nodo* costruz(){
-	nodo*x2=new nodo(2);
-	nodo* x3=new nodo(3);
-	nodo* x4=new nodo(4);
-	nodo*x1=new nodo(1,x2,x3);
-	x2->right=x4;
-	return x1;
+	
+nodo* costruz(){													//costruisce un albero di quattro nodi
+	nodo*x2=new nodo(2);									
+	nodo* x3=new nodo(3);									
+	nodo* x4=new nodo(4);									
+	nodo*x1=new nodo(1,x2,x3);								
+	x2->right=x4;											
+	return x1;												
 }
 
 main(){
@@ -149,9 +148,9 @@ main(){
 	for(int i=1; C[i-1]!=-2; i++)
 		INP>>C[i];
 
-	nodo *X=costruz();
-	nodo *r=build_iter(C,X,INP,OUT);
-	stampa_l(r,OUT);
+	nodo *X=costruz();										//costruisce l'albero
+	nodo *r=build_iter(C,X,INP,OUT);						//in modo iterativo
+	stampa_l(r,OUT);										//e lo stampa
 	OUT<<endl;
 
 	r=build_iter(C,0,INP,OUT);

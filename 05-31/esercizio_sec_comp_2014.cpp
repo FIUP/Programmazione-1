@@ -35,20 +35,20 @@ nodo* costruz(){
 
 int level(nodo*&r, int dim, int lev, ifstream & INP){
 	if(!lev){
-		if(!r && dim>0){//albero vuoto inserisco in radice
+		if(!r && dim>0){							//albero vuoto inserisco in radice
 			int x;
 			INP>>x;
 			r=new nodo(x);
-			return dim-1;//scalo uno dai nodi da inserire
+			return dim-1;							//scalo uno dai nodi da inserire
 		} 
-		return dim;	//altrimenti non posso inserire nodi in questo livello
+		return dim;									//altrimenti non posso inserire nodi in questo livello
 	}
 	
 	if(!r)
 		return dim;
 
-	if(dim>0){ //ancora nodi da inserire provo nel livello prima
-		dim=level(r->left, dim, lev-1, INP);	
+	if(dim>0){ 										//ancora nodi da inserire provo nel livello prima
+		dim=level(r->left, dim, lev-1, INP);		
 	//if(dim>0)
 		return level(r->right, dim, lev-1, INP);
 	}
