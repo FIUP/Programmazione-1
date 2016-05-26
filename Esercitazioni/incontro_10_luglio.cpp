@@ -34,4 +34,6 @@ nodo* f0(nodo*&L, int y, int k, int &v){
 //POST=(se vL contiene meno di max(0,k-vv) allora L=vL, altrimenti L è la lista ottenuta da vL togliendo da vL min nodi con info=y in L)
 //---------------------------------//
 //per casa, da fare
-// funzione ricorsiva che invece di staccare gli ultimi k nodi, stacca i primi k nodi, ma solo se ce ne sono k, ma solo se ce ne sono almeno k nodi.
+// funzione ricorsiva che invece di staccare gli ultimi k nodi, stacca i primi k nodi ma solo se ce ne sono almeno k nodi.
+// trovate questo esercizio svolto nel file esercizio_1_17_5_2016_incontro_10_luglio_per_casa non commentato
+//in pratica basta scambiare le istruzioni di if(v !=-1 && v<k) con quelle del suo else tenendo nell'if principale l'incremento di v
