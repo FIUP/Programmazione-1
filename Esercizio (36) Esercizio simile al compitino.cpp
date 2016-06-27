@@ -12,10 +12,11 @@ nodo* F(int n_el){
         return 0;
 }
 
-nodo *sUk(nodo* &Q, int k, int z, int &ck) {
-	if(!Q){                 //se Q è NULL
+nodo *sUk(nodo* &Q, int k, int z, int &ck, int &lasciak) {
+	if(!Q){                //se Q è NULL
 		if(ck>k) {         //se ck è maggiore o uguale a K
 			//ck=k;           //ck diventa k
+			lasciak=ck-k;
 			return NULL;    //ritorna 0
 		}else{              //se ck è minore di K
 			ck=0;           //azzero ck
@@ -24,9 +25,10 @@ nodo *sUk(nodo* &Q, int k, int z, int &ck) {
 	}
 	if(Q->info==z){                         //se Q->info è uguale a z
 		ck++;                               //ck++
-		nodo* p=sUk(Q->next, k, z, ck);     //creo nodo p e gli passo prossimo el di Q finchè non arrivo alla fine
+		nodo* p=sUk(Q->next, k, z, ck, lasciak);     //creo nodo p e gli passo prossimo el di Q finchè non arrivo alla fine
 		if(ck>0){
-			if(ck-k<1){
+			if(ck<=lasciak){
+			   //if(ck<=k){
 			    nodo* a=Q;                      //salvo Q in a
 			    Q=Q->next;                      //Q va al prossimo el
 			    a->next=p;                      //prossimo el di a diventa p
@@ -37,7 +39,7 @@ nodo *sUk(nodo* &Q, int k, int z, int &ck) {
 		}
 		return p;                           //ritorno p
 	}else                                   //se Q-info non è uguale a z
-		return sUk(Q->next, k, z, ck);      //passo al prossimo el di Q
+		return sUk(Q->next, k, z, ck, lasciak);      //passo al prossimo el di Q
 }
 
 void stampa(nodo* x){
@@ -48,14 +50,14 @@ void stampa(nodo* x){
 }
 
 main(){
-    int n_el, k, z, ck=0;
+    int n_el, k, z, ck=0, lasciak=0;
     cin>>n_el>>k>>z;
 
     nodo* x=F(n_el);
     cout<<"x= ";
     stampa(x);
 
-    nodo*y=sUk(x,k,z,ck);
+    nodo*y=sUk(x,k,z,ck, lasciak);
     cout<<"y= ";
         stampa(y);
     cout<<"x= ";
