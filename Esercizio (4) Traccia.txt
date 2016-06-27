@@ -1,0 +1,1 @@
+Legge interi da cin fino a a trovare la sentinella 0. Calcola e stampa  il valore minimo e quello massimo dei valori letti prima della sentinella. In caso non ci siano valori (cioè se la sentinella 0 è al primo posto in cin) deve scrivere il messaggio d'errore "non ci sono valori da leggere".

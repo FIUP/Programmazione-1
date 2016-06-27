@@ -1,0 +1,1 @@
+Leggere da cin  fino a che venga letto un valore sentinella (0) e calcolare il numero dei valori negativi e quello dei valori positivi letti.
