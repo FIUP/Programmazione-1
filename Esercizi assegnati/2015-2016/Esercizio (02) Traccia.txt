@@ -1,0 +1,1 @@
+Leggere da cin fino a che non venga letto un valore sentinella (0) e calcolare la somma dei valori letti.
