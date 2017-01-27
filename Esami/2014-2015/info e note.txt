@@ -1,0 +1,15 @@
+INFO:
+dall'anno accademico 2014-2015 il corso di P1 è diviso in due parti:
+- prima parte (2 crediti) al primo semestre, termiana con un compitino.
+- seconda parte (8 crediti) al secondo semestre, tipicamente prevede due compitini.
+- seguono i normali 5 appelli a partire dalla sessione estiva.
+
+NOTE:
+- all'interno delle cartelle dei singoli esami c'è una cartella SOL che contiene molteplici file .cpp
+  discriminati da un numero progressivo alla fine del nome, sono varie soluzioni di vari studenti;
+  può capitare che uno stesso file .cpp contenga più versioni dello stesso autore, dopo la prima le
+  altre sono commentate, è indicato che sta per cominciare una nuova versione del codice.
+- il file .cpp all'interno della cartella principale è l'eventuale main() fornito dal professore.
+- i file inputX.txt contengono i test automatici di moodle, all'interno di ognuno di essi
+  c'è anche il rispettivo "Expected Output".
+- solitamente per chi deve fare l'integrazione NON è richiesta la parte di correttezza.

@@ -1,0 +1,16 @@
+
+1  10 2
+2 2 2 2 1 2 1 0 2 0
+
+
+
+--- Expected output (text)---
+albero:
+2(2(2(0(_,_),_),2(0(_,_),_)),2(1(2(_,_),_),1(_,_)))
+lista creata:
+2 0 2 1 1
+lista dei nodi tolti
+2 1
+lista dei nodi che restano
+2 0 1
+end

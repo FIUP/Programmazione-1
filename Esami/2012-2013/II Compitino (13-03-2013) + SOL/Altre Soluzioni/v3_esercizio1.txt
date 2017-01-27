@@ -1,0 +1,40 @@
+void crea (nodo *& inizio, int dim ,ifstream & INP)
+{
+  if(!dim)
+  { inizio=0; return ;   }
+   int x;
+   INP>>x;
+   crea(inizio->next,dim-1,INP);
+ }
+ 
+ 
+  nodo * match (nodo *&L,int *P,ind dimP)
+ {
+    if(!L)//fallimento non c'è match
+       return 0;
+    if(L->info==P[0])//c'è un match
+    {
+   
+        if(dimP==1)//match completo
+	   {
+	      nodo *x=L;
+	      L=L->next;
+	      x->next=0;
+	      return x;
+	   }
+	   else //match non ancora completo 
+	  {
+	     nodo *x=match(L->next,P+1,dimP-1);
+	     if(x) //è andato bene x è il resto del match nel resto della lista
+	     {
+	       nodo *y=L;
+		   L=L->next;
+		   y->next=x;
+		   return y;
+		 }
+		  else return 0; //fallimento non è possibile completare il match 
+ 	   }
+	 }
+	 else //L->info != P[0]
+	 return match (L->next,P,dimP);
+ }

@@ -1,0 +1,33 @@
+3 4 5
+60
+4 4 4 4 4
+4 4 4 4 4
+4 4 4 4 4
+4 4 4 4 4
+
+4 4 4 4 4
+4 4 4 4 4
+4 4 4 4 4
+4 4 4 4 4
+
+4 4 4 4 4
+4 4 4 4 4
+4 4 4 4 4
+4 4 4 4 4
+
+2 2 1 2
+
+1
+4
+
+
+
+#############
+Expected Output:
+trovato match a partire dall'elemento 0
+trovato match a partire dall'elemento 1
+trovato match a partire dall'elemento 2
+trovato match a partire dall'elemento 3
+trovato match a partire dall'elemento 4
+trovato match a partire dall'elemento 5
+n. totale match=6

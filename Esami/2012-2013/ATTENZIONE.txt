@@ -1,0 +1,4 @@
+Spesso il codice delle soluzioni (eg: esercizio1.cpp) precede l'apertura di un file (eg: input1) forniti assieme, ma che qui sono stati rinominati "input1.txt" per permetterne la visione anche agli utenti Windows.
+Pertanto se provate ad eseguire prestate attenzione a questo fatto, ed eventualmente cambiate le righe di codice o rinominate i file presenti nella vostra cartella.
+NB: è anche possibile che il vostro sistema NON vi mostri l'estensione dei file...
+-> google -> abilitare estensione file Win X

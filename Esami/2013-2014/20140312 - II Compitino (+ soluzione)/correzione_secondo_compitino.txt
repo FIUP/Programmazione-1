@@ -1,0 +1,36 @@
+int level(nodo* &r, int dim, int lev, ifstream & INP)
+{
+  if(dim)
+    {
+      if(!lev && !r)
+	{
+	  int x;
+	  INP>>x;
+	  r=new nodo(x);
+	  return dim-1;
+	}
+      else
+	{
+	  if(lev>0 && r)
+	    {
+	      int y=level(r->left, dim, lev-1, INP);
+	      return level(r->right, y, lev-1, INP);
+	    }
+	  else
+	    return dim;
+	} 
+    }
+  else
+    return 0;
+}
+
+nodo* build(nodo* r, int dim, int lev, ifstream & INP)
+{
+  if(dim>0)
+    {
+      dim=level(r, dim, lev, INP);
+      return build(r, dim, lev+1, INP);
+    }
+  else
+    return r;
+}

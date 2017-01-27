@@ -1,0 +1,42 @@
+3 4 5
+60
+0  0  0  0  0
+0  0  0  0  1
+0  0  1  1  1
+0  0  0  0  0
+
+1  1  1  1  1
+1  1  1  0  1
+0  0  1  1  1
+1  1  0  1  1
+
+1  1  0  1  1
+1  1  1  1  1
+0  1  1  0  1
+1  1  1  1  0
+
+0 2 3 3
+
+5
+1 1 0 1 1
+
+
+
+###########
+Expected Output:
+a partire dall'elemento 0 non c'e' match
+a partire dall'elemento 1 non c'e' match
+a partire dall'elemento 2 non c'e' match
+a partire dall'elemento 3 non c'e' match
+a partire dall'elemento 4 non c'e' match
+a partire dall'elemento 5 non c'e' match
+a partire dall'elemento 6 non c'e' match
+a partire dall'elemento 7 non c'e' match
+a partire dall'elemento 8 non c'e' match
+a partire dall'elemento 9 non c'e' match
+a partire dall'elemento 10 non c'e' match
+trovato match a partire dall'elemento 11
+trovato match a partire dall'elemento 16
+a partire dall'elemento 21 non c'e' match
+a partire dall'elemento 22 non c'e' match
+n. totale match=2
