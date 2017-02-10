@@ -15,7 +15,7 @@ Sito esami: https://elearning.studenti.math.unipd.it/esami/
 
 Se volete aiutare a mantenere aggiornata questa repository vi basterà fare una **PULL REQUEST**, se non sapete usare GitHub potete seguire questa [**GUIDA INTRODUTTIVA**](http://bfy.tw/XIx) o altrimenti chiedere a qualcuno in uno dei vari gruppi social del FIUP.
 
-Siccome tutti possono proporre le proprie soluzioni bisogna rispettare rispettare delle semplici linee guida per avere un'organizzazione migliore.
+Siccome tutti possono proporre le proprie soluzioni bisogna rispettare delle semplici linee guida per avere un'organizzazione migliore.
 Ogni anno accademico deve avere la propria cartella all'interno di "Esercizi assegnati" chiamata 20XX-20XX (in base all'anno) al cui interno ci saranno gli esercizi dati in laboratorio. Ogni esercizio deve essere composto da 3 parti:
 * Testo (Basta 1)
 * Main Iniziale (Basta 1)
