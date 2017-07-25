@@ -1,0 +1,51 @@
+Test 1: A
+--- Input ---
+1984
+
+--- Expected output (text)---
+start
+1
+9
+8
+4
+end
+
+Test 2: B
+--- Input ---
+9
+
+--- Expected output (text)---
+start
+9
+end
+
+Test 3: C
+--- Input ---
+10000001
+
+--- Expected output (text)---
+start
+1
+0
+0
+0
+0
+0
+0
+1
+end
+
+Test 4: D
+--- Input ---
+3451920
+
+--- Expected output (text)---
+start
+3
+4
+5
+1
+9
+2
+0
+end

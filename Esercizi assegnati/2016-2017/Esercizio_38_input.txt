@@ -1,0 +1,35 @@
+Test 1: A
+--- Input ---
+7 9
+
+--- Expected output (text)---
+start
+1/2 + 1/4 + 1/36
+end
+
+Test 2: B
+--- Input ---
+3 25
+
+--- Expected output (text)---
+start
+1/9 + 1/113 + 1/25425
+end
+
+Test 3: C
+--- Input ---
+12 5
+
+--- Expected output (text)---
+start
+Input non corretto
+end
+
+Test 4: D
+--- Input ---
+0 45
+
+--- Expected output (text)---
+start
+Input non corretto
+end

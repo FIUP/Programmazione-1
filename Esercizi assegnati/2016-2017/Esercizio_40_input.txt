@@ -1,0 +1,56 @@
+Test 1: A
+--- Input ---
+*b a * b c * *d c .
+a b a b c c c d a b e e a a d c d c a .
+
+--- Expected output (text)---
+start
+1 2
+0 2
+9 2
+dopo 1 elementi
+troviamo  babc
+dopo 9 elementi
+troviamo  dc
+end
+
+Test 2: B
+--- Input ---
+c * c * c  .
+a b a b c c c d a b e e a a d c d c a .
+
+--- Expected output (text)---
+start
+4 1
+0 1
+0 1
+dopo 4 elementi
+troviamo  ccc
+end
+
+Test 3: C
+--- Input ---
+* * * .
+a b a b c c c d a b e e a a d c d c a .
+
+--- Expected output (text)---
+start
+end
+
+Test 4: D
+--- Input ---
+b c * d a a * d c .
+a b a b c c c d a a e e a a d c d c a .
+
+--- Expected output (text)---
+start
+3 2
+2 3
+4 2
+dopo 3 elementi
+troviamo  bc
+dopo 2 elementi
+troviamo  daa
+dopo 4 elementi
+troviamo  dc
+end
