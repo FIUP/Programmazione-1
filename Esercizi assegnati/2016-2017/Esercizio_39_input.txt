@@ -1,0 +1,63 @@
+Test 1: A
+--- Input ---
+2 3 -1 0 2 3 -1 2 3 -1 0 2 -1 -1 2 3 0 -1 -2
+
+--- Expected output (text)---
+start
+0 2
+3 3
+7 2
+10 2
+13 0
+14 3
+end
+
+Test 2: B
+--- Input ---
+0 0 -1 1 -1 0 -1 1 0 -1 1 1 1 -1 -1 0 -1 0 0 0 -1 0 1 0 -1 1 0 1 -1 1 0 -1 0 0 0 0 -1 -2
+
+--- Expected output (text)---
+start
+0 2
+3 1
+5 1
+7 2
+10 3
+14 0
+15 1
+17 3
+21 3
+25 3
+29 2
+32 4
+end
+
+Test 3: C
+--- Input ---
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 0 2 -1 -2
+
+--- Expected output (text)---
+start
+0 0
+1 0
+2 0
+3 0
+4 0
+5 0
+6 0
+7 0
+8 0
+9 0
+10 0
+11 0
+12 0
+13 3
+end
+
+Test 4: D
+--- Input ---
+-2
+
+--- Expected output (text)---
+start
+end

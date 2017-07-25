@@ -1,0 +1,31 @@
+Test 1: A
+--- Input ---
+0 1 1 1
+
+--- Expected output (text)---
+Input sbagliato
+end
+
+Test 2: B
+--- Input ---
+1 1 2 1
+
+--- Expected output (text)---
+SI
+end
+
+Test 3: C
+--- Input ---
+2 2 4 1
+
+--- Expected output (text)---
+SI
+end
+
+Test 4: D
+--- Input ---
+2 2 8 3
+
+--- Expected output (text)---
+NO
+end

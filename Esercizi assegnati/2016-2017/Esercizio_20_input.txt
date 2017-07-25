@@ -1,0 +1,56 @@
+Test 1: A
+--- Input ---
+0 1 2 3 4 1
+0 6 2 3 1 5
+0 1 2 3 4 5
+0 1 2 3 4 5
+0 1 2 3 7 5
+0 1 2 3 4 1
+
+--- Expected output (text)---
+start
+diagonale principale contiene 6 che non e' sulla diagonale secondaria
+end
+
+Test 2: B
+--- Input ---
+0 1 2 3 4 5
+0 1 2 3 5 5
+0 1 2 3 4 5
+0 1 2 3 4 5
+0 8 2 3 7 5
+0 1 2 3 4 5
+
+--- Expected output (text)---
+start
+diagonale principale contiene 1 che non e' sulla diagonale secondaria
+diagonale secondaria contiene 8 che non e' sulla diagonale principale
+end
+
+Test 3: C
+--- Input ---
+0 1 2 3 4 5
+0 1 2 3 4 5
+0 1 2 3 4 5
+0 1 2 3 4 5
+0 1 2 3 4 5
+0 1 2 3 4 5
+
+--- Expected output (text)---
+start
+le due diagonali contengono gli stessi valori
+end
+
+Test 4: D
+--- Input ---
+0 1 2 3 4 5
+0 0 2 3 4 5
+0 1 2 3 4 5
+0 1 2 3 4 5
+0 8 2 3 4 5
+0 1 2 3 4 5
+
+--- Expected output (text)---
+start
+diagonale secondaria contiene 8 che non e' sulla diagonale principale
+end

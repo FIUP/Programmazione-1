@@ -1,0 +1,65 @@
+Test 1: A
+--- Input ---
+10 3
+
+--- Expected output (text)---
+start
+2 eliminata
+5 eliminata
+8 eliminata
+1 eliminata
+6 eliminata
+0 eliminata
+7 eliminata
+4 eliminata
+9 eliminata
+3 sopravvive
+end
+
+Test 2: B
+--- Input ---
+10 10
+
+--- Expected output (text)---
+start
+9 eliminata
+0 eliminata
+2 eliminata
+5 eliminata
+1 eliminata
+8 eliminata
+4 eliminata
+6 eliminata
+3 eliminata
+7 sopravvive
+end
+
+Test 3: C
+--- Input ---
+7 11
+
+--- Expected output (text)---
+start
+3 eliminata
+1 eliminata
+2 eliminata
+6 eliminata
+4 eliminata
+5 eliminata
+0 sopravvive
+end
+
+Test 4: D
+
+--- Input ---
+6 1
+
+--- Expected output (text)---
+start
+0 eliminata
+1 eliminata
+2 eliminata
+3 eliminata
+4 eliminata
+5 sopravvive
+end

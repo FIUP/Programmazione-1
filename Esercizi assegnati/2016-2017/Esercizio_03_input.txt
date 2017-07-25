@@ -1,0 +1,38 @@
+Test 1: A
+--- Input ---
+f
+s
+
+--- Expected output (text)---
+vince il giocatore 2
+end
+
+Test 2: B
+--- Input ---
+f
+c
+
+--- Program output ---
+vince il giocatore 1
+
+--- Expected output (text)---
+vince il giocatore 1
+end
+
+Test 3: C
+--- Input ---
+c
+c
+
+--- Expected output (text)---
+pareggio
+end
+
+Test 4: D
+--- Input ---
+s
+h
+
+--- Expected output (text)---
+mossa non valida
+end

@@ -1,0 +1,33 @@
+Test 1: A
+--- Input ---
+4 abba
+
+--- Expected output (text)---
+La sequenza e' palindroma
+end
+
+Test 2: B
+--- Input ---
+6
+3ffg6,
+
+--- Expected output (text)---
+La sequenza non e' palindroma
+end
+
+Test 3: C
+--- Input ---
+1 @
+
+--- Expected output (text)---
+La sequenza e' palindroma
+end
+
+Test 4: D
+--- Input ---
+21
+itopinonavevanonipoti
+
+--- Expected output (text)---
+La sequenza e' palindroma
+end

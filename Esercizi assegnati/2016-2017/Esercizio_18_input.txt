@@ -1,0 +1,55 @@
+Test 1
+--- Input ---
+6   32  3   34  35  1
+7   11  27  28  8   30
+19  14  16  15  23  24
+18  20  22  21  17  13
+25  29  10  9   26  12
+36  5   33  4   2   31
+
+--- Expected output (text)---
+start
+111
+end
+
+Test 2: B
+--- Input ---
+6   32  3   34  35  1
+7   11  27  28  8   30
+19  14  16  15  23  24
+18  20  22  21  17  13
+25  29  10  9   26  12
+36  5   4   33   2   31
+
+--- Expected output (text)---
+start
+Non e' un quadrato magico
+end
+
+Test 3: C
+--- Input ---
+1   4   2   8   5   7
+2   8   5   7   1   4
+4   2   8   5   7   1
+5   7   1   4   2   8
+7   1   4   2   8   5
+8   5   7   1   4   2
+
+--- Expected output (text)---
+start
+Non e' un quadrato magico
+end
+
+Test 4: D
+--- Input ---
+26  35  1  19   6   24
+17  8   28  10  33  7
+30  12  14  23  25  15
+3   21  5   32  34  16
+31  22  27  9   2   20
+4   13  36  18  11  29
+
+--- Expected output (text)---
+start
+Non e' un quadrato magico
+end

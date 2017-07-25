@@ -1,0 +1,40 @@
+Test 1: A
+--- Input ---
+-4  22
+
+--- Expected output (text)---
+smanettone: bocciato, devi studiare di piu' la teoria
+end
+
+Test 2: B
+
+--- Input ---
+0 15
+
+--- Expected output (text)---
+bocciato: devi studiare ed esercitarti di piu'
+end
+
+Test 3: C
+--- Input ---
+4 12
+
+--- Expected output (text)---
+bocciato: devi esercitarti di piu'
+end
+
+Test 4: D
+--- Input ---
+8 23
+
+--- Expected output (text)---
+congratulazioni: 30 e lode
+end
+
+Test 5: E
+--- Input ---
+4 20
+
+--- Expected output (text)---
+il tuo voto e' 24
+end

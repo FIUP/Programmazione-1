@@ -1,0 +1,51 @@
+Test 1: A
+--- Input ---
+-6    32  -3    34   35
+ 7    11  -27   28  -8
+ 19  -14   16   15  -23
+ 18  -20   22  -21   17
+-25   29   10  -9    26
+
+--- Expected output (text)---
+start
+2
+end
+
+Test 2: B
+--- Input ---
+-6    32   3   -34   35
+ 7    11  -27   28  -8
+ 19  -14   16   15  -23
+ 18   20  -22  -21   17
+-25  -29   10   9    26
+
+--- Expected output (text)---
+start
+Non e' un quadrato negativo
+end
+
+Test 3: C
+--- Input ---
+1   4   2   8   5
+2   8   5   7   1
+4   2   8   5   7
+5   7   1   4   2
+7   1   4   2   8
+
+--- Expected output (text)---
+start
+0
+end
+
+Test 4: D
+--- Input ---
+-26  -35  -1    19   6
+ 17  -8    28  -10  -25
+-30  -12   14   23  -33
+ 3   -21   5   -32  -34
+-31   22  -27  -9    2
+
+--- Expected output (text)---
+start
+Non e' un quadrato negativo
+end

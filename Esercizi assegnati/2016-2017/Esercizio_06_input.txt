@@ -1,0 +1,35 @@
+Test 1: A
+--- Input ---
+3
+f c  s f  c s
+
+--- Expected output (text)---
+Vince il Giocatore 1
+end
+
+Test 2: B
+--- Input ---
+6
+s f  s s  f f  c c  s c  f s
+
+--- Expected output (text)---
+Vince il Giocatore 2
+end
+
+Test 3: C
+--- Input ---
+3
+f f  s c  c s
+
+--- Expected output (text)---
+Pareggio
+end
+
+Test 4: D
+--- Input ---
+5
+c s  f c  s f  c f  f s
+
+--- Expected output (text)---
+Vince il Giocatore 1
+end

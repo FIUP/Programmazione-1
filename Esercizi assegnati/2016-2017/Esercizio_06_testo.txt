@@ -1,0 +1,5 @@
+Scrivere un programma che legge un valore intero n > 0 e una sequenza di n coppie 
+di caratteri che rappresentano mosse della morra cinese. Il programma deve 
+dichiarare quale giocatore ha vinto alla fine della sequenza di n giocate, 
+scrivendo sullo schermo "Vince il Giocatore 1", oppure "Vince il Giocatore 2", 
+oppure "Pareggio".

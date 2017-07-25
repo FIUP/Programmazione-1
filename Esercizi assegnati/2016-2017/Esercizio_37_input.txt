@@ -1,0 +1,43 @@
+Test 1: A
+--- Input ---
+2 3 * 6 11 - 7 4 q
+
+--- Expected output (text)---
+start
+4/11
+-61/44
+end
+
+Test 2: B
+--- Input ---
+24 12 / -3 5 - 4 6 - 1 4 * 6 7 q
+
+--- Expected output (text)---
+start
+-10/3
+-4/1
+-17/4
+-51/14
+end
+
+Test 3: C
+--- Input ---
+1 4 * 6 7 * 0 34 q
+
+--- Expected output (text)---
+start
+3/14
+0/1
+end
+
+Test 4: D
+--- Input ---
+3 4 - 6 8 / 0 23 + 3 45 * 4 6  q
+
+--- Expected output (text)---
+start
+0/1
+0/0
+0/0
+0/0
+end

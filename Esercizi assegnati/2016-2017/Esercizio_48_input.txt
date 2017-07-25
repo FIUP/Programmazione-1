@@ -1,0 +1,39 @@
+Test 1: A
+--- Input ---
+3 12 67 12 45 78 -1
+12
+
+--- Expected output (text)---
+start
+Il valore 12 si trova in posizione 1
+end
+
+Test 2: B
+--- Input ---
+63 12 67 12 22 45 78 0 12 56 -1
+56
+
+--- Expected output (text)---
+start
+Il valore 56 si trova in posizione 9
+end
+
+Test 3: C
+--- Input ---
+63 12 67 12 22 45 78 0 12 56 -1
+156
+
+--- Expected output (text)---
+start
+Il valore 156 non si trova nella lista
+end
+
+Test 4: D
+--- Input ---
+-1
+23
+
+--- Expected output (text)---
+start
+Il valore 23 non si trova nella lista
+end

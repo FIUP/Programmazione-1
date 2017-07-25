@@ -1,0 +1,35 @@
+Test 1: A
+--- Input ---
+a(c(_,d(_,_)), e(_,b(_,_))) $
+
+--- Expected output (text)---
+start
+prof=2 info foglia=d
+end
+
+Test 2: B
+--- Input ---
+a(c(_,d(_,a(_,_))), e(_,b(_,_))) $
+
+--- Expected output (text)---
+start
+prof=2 info foglia=b
+end
+
+Test 3: C
+--- Input ---
+a(_,_) $
+
+--- Expected output (text)---
+start
+prof=0 info foglia=a
+end
+
+Test 4: D
+--- Input ---
+a(_,b(c(d(_,_),_),e(_,_))) $
+
+--- Expected output (text)---
+start
+prof=2 info foglia=e
+end
