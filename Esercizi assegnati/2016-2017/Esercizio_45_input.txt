@@ -1,0 +1,50 @@
+Test 1: A
+--- Input ---
+5
+0 1 1 0 1
+1 0 0 0 1
+0 1 0 1 0
+0 0 0 0 1
+1 0 0 0 1
+
+--- Expected output (text)---
+il cammino esiste
+
+Test 2: B
+--- Input ---
+6
+1 1 1 1 1 1
+0 0 1 0 0 0
+1 1 0 0 1 0
+0 0 1 1 1 1
+1 1 1 1 1 1
+1 1 1 1 1 1
+
+--- Expected output (text)---
+il cammino esiste
+
+Test 3: C
+--- Input ---
+6
+1 1 1 1 1 1
+0 0 0 0 1 1
+1 1 1 0 0 1
+0 0 0 0 0 1
+0 0 0 0 0 0
+1 1 1 1 1 1
+
+--- Expected output (text)---
+il cammino non esiste
+
+Test 4: D
+--- Input ---
+6
+0 0 0 1 0 1
+1 0 1 0 1 0
+0 0 0 0 0 1
+0 0 0 0 1 0
+0 0 0 1 0 1
+1 1 1 1 1 0
+
+--- Expected output (text)---
+il cammino esiste

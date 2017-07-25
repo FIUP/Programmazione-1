@@ -1,0 +1,35 @@
+Test 1: A
+--- Input ---
+C O D * A * * * * N E L * * M E * * * Z Z * O * * .
+
+--- Expected output (text)---
+start
+C O D A vuota N E L M E Z Z O
+end
+
+Test 2: B
+--- Input ---
+* A L L * I N I * * * Z I * * O * * * .
+
+--- Expected output (text)---
+start
+vuota A L L I N I Z I O
+end
+
+Test 3: C
+--- Input ---
+F I * N * * E * C * O * D * A * * * * .
+
+--- Expected output (text)---
+start
+F I N E C O D A vuota vuota vuota
+end
+
+Test 4: D
+--- Input ---
+N O * N * * S T A * * * M P * * O T U T T O * * .
+
+--- Expected output (text)---
+start
+N O N S T A M P O T
+end
