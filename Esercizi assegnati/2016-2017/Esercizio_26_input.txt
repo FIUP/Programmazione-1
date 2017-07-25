@@ -1,0 +1,58 @@
+Test 1: A
+--- Input ---
+66
+1  2  1  0  0  0  2  2
+3  1  0  0  1  1  1  1
+1  2  1  0  1  1  0  1
+0  2  2  2  0  1  2  2
+2  2  2  1  1  2  1  0
+
+2  2  2  1  1  2  1  0
+1  2  1  0  1  1  0  1
+1  2  1  0  0  0  2  2
+0  1
+
+--- Expected output (text)---
+start
+H-fetta massima= 0 con somma= 19
+end
+
+Test 2: B
+--- Input ---
+10
+-1  -2  -1 -3  -3  -4  -2  -2
+ 0  -1
+
+--- Expected output (text)---
+start
+H-fetta massima= 1 con somma= -1
+end
+
+Test 3: C
+--- Input ---
+66
+1  2  1  0  0  0  2  2
+3  1  0  0  1  1  1  1
+1  2  1  0  1  1  0  1
+0  2  2  2  0  1  2  2
+2  2  2  1  1  2  1  15
+
+2  2  2  1  1  2  1  0
+1  2  1  0  1  1  0  1
+1  2  1  0  0  0  2  2
+0  15
+
+--- Expected output (text)---
+start
+H-fetta massima= 4 con somma= 26
+end
+
+Test 4: D
+--- Input ---
+4
+1  2  1  0
+
+--- Expected output (text)---
+start
+H-fetta massima= 0 con somma= 4
+end
