@@ -1,0 +1,63 @@
+Test 1: A
+--- Input ---
+0 1 1 0 0
+1 0 0 1 0
+0 0 0 1 0
+1 0 0 0 1
+1 0 1 0 0
+
+--- Expected output (text)---
+riga=0:0 0 0 1 0
+riga=1:0 0 0 0 0
+riga=2:0 0 0 0 1
+riga=3:0 0 1 0 0
+riga=4:0 0 0 0 0
+end
+
+Test 2: B
+--- Input ---
+0 0 1 1 0
+0 0 0 1 0
+0 1 1 0 0
+1 1 1 0 1
+1 0 1 1 1
+
+--- Expected output (text)---
+riga=0:0 1 0 0 0
+riga=1:0 0 0 0 0
+riga=2:0 0 0 0 0
+riga=3:0 0 0 0 0
+riga=4:0 0 1 0 0
+end
+
+Test 3: C
+--- Input ---
+0 0 1 1 0
+0 0 0 1 0
+0 1 1 0 1
+1 1 1 0 1
+0 0 1 1 0
+
+--- Expected output (text)---
+riga=0:0 1 0 0 1
+riga=1:1 0 0 0 0
+riga=2:0 0 0 0 0
+riga=3:0 0 0 0 0
+riga=4:0 1 0 0 1
+end
+
+Test 4: D
+--- Input ---
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+
+--- Expected output (text)---
+riga=0:1 1 1 1 1
+riga=1:1 1 1 1 1
+riga=2:1 1 1 1 1
+riga=3:1 1 1 1 1
+riga=4:1 1 1 1 1
+end

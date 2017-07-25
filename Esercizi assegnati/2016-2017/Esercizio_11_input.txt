@@ -1,0 +1,39 @@
+Test 1: A
+--- Input ---
+-4 2 3 2 11 1 -1 -1 1 -1 -2
+
+--- Expected output (text)---
+somma < 0 per 2 volte
+somma tra 0 e 10 per 2 volte
+somma > 10 per 5 volte
+end
+
+Test 2: B
+--- Input ---
+-4 2 3 2 11 1 -1 -1 -21 1 1 1 1
+
+--- Expected output (text)---
+somma < 0 per 5 volte
+somma tra 0 e 10 per 2 volte
+somma > 10 per 4 volte
+end
+
+Test 3: C
+--- Input ---
+-4 2 3 2 11 1 -1 -1 -7 1 1 -11 1
+
+--- Expected output (text)---
+somma < 0 per 2 volte
+somma tra 0 e 10 per 5 volte
+somma > 10 per 4 volte
+end
+
+Test 4: D
+--- Input ---
+1 -2 -4 2 3 2 1 1 7 -1 1 -1 2
+
+--- Expected output (text)---
+somma < 0 per 3 volte
+somma tra 0 e 10 per 5 volte
+somma > 10 per 0 volte
+end

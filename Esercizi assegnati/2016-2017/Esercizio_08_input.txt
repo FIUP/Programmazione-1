@@ -1,0 +1,31 @@
+Test 1: A
+--- Input ---
+a b c ) z z z (a) 0
+
+--- Expected output (text)---
+la sequenza NON e' bilanciata, ci sono parentesi chiuse senza match
+end
+
+Test 2: B
+--- Input ---
+(a ( b ( c ) ) z z z ( a ) ) 0
+
+--- Expected output (text)---
+la sequenza e' bilanciata
+end
+
+Test 3: C
+--- Input ---
+( a ( b ( c ) ) z z z ( a ) 0
+
+--- Expected output (text)---
+la sequenza NON e' bilanciata, ci sono parentesi aperte senza match
+end
+
+Test 4: D
+--- Input ---
+( )( b b b b b ) ) ( (  ( ( ) ) ) 0
+
+--- Expected output (text)---
+la sequenza NON e' bilanciata, ci sono parentesi chiuse senza match
+end
