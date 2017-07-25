@@ -1,0 +1,44 @@
+Test 1: A
+--- Input ---
+2
+a(_,b(c(d(_,_),_),e(_,_))) $
+
+--- Expected output (text)---
+start
+d b
+restituisce 1
+end
+
+Test 2: B
+--- Input ---
+1
+a(_,b(c(d(_,_),_),e(_,_))) $
+
+--- Expected output (text)---
+start
+a d c b e
+restituisce 1
+end
+
+Test 3: C
+--- Input ---
+5
+a(_,b(c(d(_,_),_),e(_,_))) $
+
+--- Expected output (text)---
+start
+e
+restituisce 5
+end
+
+Test 4: D
+--- Input ---
+8
+a(_,b(c(d(_,_),_),e(_,_))) $
+
+--- Expected output (text)---
+start
+
+restituisce 3
+end
+

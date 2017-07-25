@@ -1,0 +1,47 @@
+Test 1: A
+--- Input ---
+8
+1 2 3 8 5 6 7 8
+2 8
+
+--- Expected output (text)---
+start
+1(2(8(8(_,_),_),6(_,_)),3(5(_,_),7(_,_)))
+trovato  cammino=0 0 0 fine cammino
+end
+
+Test 2: B
+--- Input ---
+8
+0 0 0 0 0 0 0 0
+2 0
+
+--- Expected output (text)---
+start
+0(0(0(0(_,_),_),0(_,_)),0(0(_,_),0(_,_)))
+nessun cammino con 2 valori=0
+end
+
+Test 3: C
+--- Input ---
+6
+0 0 0 0 0 0
+2 0
+
+--- Expected output (text)---
+start
+0(0(0(_,_),0(_,_)),0(0(_,_),_))
+nessun cammino con 2 valori=0
+end
+
+Test 4: D
+--- Input ---
+4
+0 0 0 0
+2 0
+
+--- Expected output (text)---
+start
+0(0(0(_,_),_),0(_,_))
+trovato  cammino=1 fine cammino
+end

@@ -1,0 +1,51 @@
+Test 1: A
+--- Input ---
+10
+1 2 3 4 5 6 7 8 9 10
+2
+1 10
+
+--- Expected output (text)---
+start
+1 10
+2 3 4 5 6 7 8 9
+end
+
+Test 2: B
+--- Input ---
+10
+1 2 3 4 5 6 7 8 9 10
+5
+2 3 6 8 9
+
+--- Expected output (text)---
+start
+2 3 6 8 9
+1 4 5 7 10
+end
+
+Test 3: C
+--- Input ---
+10
+1 2 3 4 5 6 7 8 9 10
+5
+2 3 6 8 5
+
+--- Expected output (text)---
+start
+no match
+Lista T e':1 2 3 4 5 6 7 8 9 10
+end
+
+Test 4: D
+--- Input ---
+10
+1 2 3 4 5 6 7 8 9 10
+10
+1 2 3 4 5 6 7 8 9 10
+
+--- Expected output (text)---
+start
+1 2 3 4 5 6 7 8 9 10
+Lista restante vuota
+end
