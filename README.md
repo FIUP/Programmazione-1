@@ -6,9 +6,10 @@ Se vuoi contribuire ai nostri progetti, dichiari di accettare e rispettare il no
 
 Qui potete trovare tutte le [linee guida per contribuire ai progetti del FIUP](https://github.com/FIUP/Getting_Started/blob/master/CONTRIBUTING.md).
 
-# Linee guida contribuire (valide dall'anno 2016-2017)
+# Linee guida per contribuire (valide dall'anno 2016-2017)
+Chiunque può proporre le proprie soluzioni a patto di rispettare le semplici linee guida, indicate in seguito per avere un'organizzazione migliore.
 
-Se volete aiutare a mantenere aggiornata questa repository:
+## Linee guida generali
 
 0. Disporre di git sul proprio ambiente di lavoro.
 1. Fare un fork (copia) di questo repository cliccando sul pulsante fork in alto a destra (così avete i diritti di modificare quello che vi piace e pare nel vostro progetto).
@@ -23,8 +24,7 @@ Se [trovi un bug](https://github.com/FIUP/Getting_Started/blob/master/CONTRIBUTI
 
 Infine, [non scordare di usare le etichette](https://github.com/FIUP/Getting_Started/blob/master/CONTRIBUTING.md#etichette-per-le-issue-e-pull-request) nelle tue issue e/o pull request.
 
-Chiunque può proporre le proprie soluzioni a patto di rispettare le semplici linee guida, indicate in seguito per avere un'organizzazione migliore.
-
+## Struttura del repository
 Ogni anno accademico deve avere la propria cartella all'interno di "Esercizi assegnati" chiamata 20XX-20XX (in base all'anno) al cui interno ci saranno gli esercizi dati in laboratorio. Ogni esercizio deve essere composto da 3 parti:
 * Testo (Basta 1)
 * Main Iniziale (Basta 1)
@@ -36,7 +36,7 @@ Gli esercizi vanno numerati in ordine crescente partendo da 01 (notare lo zero p
 * La soluzione: **Esercizio_01_solA.cpp** (per ogni soluzione una lettere in ordine alfabetico partendo da A)
 * Per tutti gli altri file legati ad un certo esercizio (file di input, file aggiuntivi) si può seguire la medesima regola dei nomi precedenti: **Esercizio_01_nomefile.estensione**
 
-Rispettare le linee guida può sembrare una rottura, ma aiuta ad organizzare il tutto e migliora la ricerca di un certo esercizio.
+Rispettare queste linee guida può sembrare una rottura, ma aiuta ad organizzare il tutto e migliora la ricerca di un certo esercizio.
 
 # Altri Link Utili
 * [Playlist lezioni 2015/2016](https://www.youtube.com/playlist?list=PLhEwqlL10MqNbr0f4jP0wdPiWEV2Knoxm) 
