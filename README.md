@@ -41,13 +41,13 @@ Rispettare queste linee guida può sembrare una rottura, ma aiuta ad organizzare
 # Altri Link Utili
 * [Playlist lezioni 2015/2016](https://www.youtube.com/playlist?list=PLhEwqlL10MqNbr0f4jP0wdPiWEV2Knoxm) 
 
-* [Playlist lezioni 2016/2017] (https://www.youtube.com/playlist?list=PLhEwqlL10MqNdosa8zqoMPxvrfM4WmVKl)
+* [Playlist lezioni 2016/2017](https://www.youtube.com/playlist?list=PLhEwqlL10MqNdosa8zqoMPxvrfM4WmVKl)
 
 * [Pagina web laboratorio](https://elearning.studenti.math.unipd.it/labs/)
 
 * [Pagina web esami](https://elearning.studenti.math.unipd.it/esami/)
 
-##Note finali
+# Note finali
 Un grazie a tutti quelli che hanno contribuito fino ad oggi e a tutti quelli che contribuiranno in futuro.
 
 Vuoi far parte del FIUP? Dai un'occhiata alla nostra [organizzazione su Github](https://github.com/FIUP), [manda una mail](mailto:fiup.unipd@gmail.com) o segui [i nostri account social](https://github.com/FIUP/Getting_Started/blob/master/FIUP_Rules.md#il-fiup-nei-social).
