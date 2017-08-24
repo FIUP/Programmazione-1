@@ -26,10 +26,11 @@ Breve guida sui concetti base:
 Sono disponibili plugin/tool/app per il proprio editor/IDE/sistema operativo, se ci si vuole semplificare la vita cercare quelli grafici (GUI) invece che a riga di comando. Per tutto il resto c'è Google :)
 
 Siccome tutti possono proporre le proprie soluzioni bisogna rispettare delle semplici linee guida per avere un'organizzazione migliore.
-Ogni anno accademico deve avere la propria cartella all'interno di "Esercizi assegnati" chiamata 20XX-20XX (in base all'anno) al cui interno ci saranno gli esercizi dati in laboratorio. Ogni esercizio deve essere composto da 3 parti:
+Ogni anno accademico deve avere la propria cartella all'interno di "Esercizi assegnati" chiamata 20XX-20XX (in base all'anno) al cui interno ci saranno gli esercizi dati in laboratorio, una cartella per esercizio "Esercizio_01". Ogni esercizio deve essere composto da 3 parti:
 * Testo (Basta 1)
 * Main Iniziale (Basta 1)
 * Soluzione (Senza limite)
+* Input (a piacere non è così importante per la logica dell'esercizio)
 
 Gli esercizi vanno numerati in ordine crescente partendo da 01 (sì ci va lo zero per i primi 9) come nell'esempio:
 * Il file di testo: **Esercizio_01_testo_nome_usato.pdf** (nome_usato è il nome dell'esercizio sul sito del laboratorio)
