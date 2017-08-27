@@ -1,4 +1,4 @@
-# [![FIUP](https://avatars2.githubusercontent.com/u/8012686?v=3&s=150)](https://github.com/orgs/FIUP/people) Programmazione 1
+# Programmazione 1
 
 Tutto quello che può essere d'aiuto per superare l'esame di Programmazione 1 (P1) raccolto in un'unica repository.
 
@@ -29,6 +29,7 @@ Ogni anno accademico deve avere la propria cartella all'interno di "Esercizi ass
 * Testo (Basta 1)
 * Main Iniziale (Basta 1)
 * Soluzione (Senza limite)
+* Input (a piacere non è così importante per la logica dell'esercizio)
 
 Gli esercizi vanno numerati in ordine crescente partendo da 01 (notare lo zero per i primi 9) come nell'esempio:
 * Il file di testo: **Esercizio_01_testo_nome_usato.pdf** (nome_usato è il nome dell'esercizio sul sito del laboratorio)

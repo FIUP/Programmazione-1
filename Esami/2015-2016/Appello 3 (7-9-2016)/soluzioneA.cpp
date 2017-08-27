@@ -87,7 +87,9 @@ nodo* LO(nodoF* W) {
 		W->fi = push_end(W->fi, W->next->fi.primo);
 	}
 	LO(W->next);
-	return W->fi.primo;
+	nodo* tmp = W->fi.primo;
+	delete(W);
+	return tmp;
 }
 main()
 {
