@@ -1,4 +1,4 @@
-# Programmazione 1
+# [![FIUP](https://avatars2.githubusercontent.com/u/8012686?v=3&s=150)](https://github.com/orgs/FIUP/people) Programmazione 1
 
 Tutto quello che può essere d'aiuto per superare l'esame di Programmazione 1 (P1) raccolto in un'unica repository.
 
