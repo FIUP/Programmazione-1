@@ -21,7 +21,7 @@ Hai dubbi o domande? Ti serve aiuto? Dai un'occhiata ai nostri gruppi social: ht
 2. [Secondo passo]
 3. [e via così...]
 
-**Comportamento atteso:** [Descrivi osa dovrebbe succedere]
+**Comportamento atteso:** [Descrivi cosa dovrebbe succedere]
 
 **Comportamento attuale:** [Scrivi cosa succede in realtà]
 
