@@ -1,3 +1,4 @@
+// Soluzione di B. Cosentino
 #include<iostream>
 using namespace std;
 
