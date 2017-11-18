@@ -1,0 +1,95 @@
+Test 1: A
+--- Input ---
+a ( _ , b ( _ , c ( _ , d ( _ , e ( _ , _ ) ) ) ) ) $
+4
+2 6 1 3
+
+--- Expected output (text)---
+start
+a(_,b(_,c(_,d(_,e(_,_)))))
+info nodo N.2 =b il cammino e':
+1
+il nodo N.6 non c'e'
+info nodo N.1 =a il cammino e':
+
+info nodo N.3 =c il cammino e':
+1 1
+5(_,4(_,3(_,2(_,1(_,_)))))
+info nodo N.2 =b il cammino e':
+1
+il nodo N.6 non c'e'
+info nodo N.1 =a il cammino e':
+
+info nodo N.3 =c il cammino e':
+1 1
+end
+
+Test 2: B
+--- Input ---
+a ( b ( c ( _ , _ ) , _ ) , d( e ( _ , f ( _ , _ ) ) , _) ) $
+3
+1 3 10
+
+--- Expected output (text)---
+start
+a(b(c(_,_),_),d(e(_,f(_,_)),_))
+info nodo N.1 =c il cammino e':
+0 0
+info nodo N.3 =a il cammino e':
+
+il nodo N.10 non c'e'
+6(2(1(_,_),_),3(2(_,1(_,_)),_))
+info nodo N.1 =c il cammino e':
+0 0
+info nodo N.3 =a il cammino e':
+
+il nodo N.10 non c'e'
+end
+
+Test 3: C
+--- Input ---
+a ( b ( c ( _ , _ ) , _ ) , d( e ( _ , f ( _ , _ ) ) , _) ) $
+3
+1 2 4
+
+--- Expected output (text)---
+start
+a(b(c(_,_),_),d(e(_,f(_,_)),_))
+info nodo N.1 =c il cammino e':
+0 0
+info nodo N.2 =b il cammino e':
+0
+info nodo N.4 =e il cammino e':
+1 0
+6(2(1(_,_),_),3(2(_,1(_,_)),_))
+info nodo N.1 =c il cammino e':
+0 0
+info nodo N.2 =b il cammino e':
+0
+info nodo N.4 =e il cammino e':
+1 0
+end
+
+Test 4: D
+--- Input ---
+a ( b ( c ( _ , _ ) , _ ) , d( e ( _ , f ( _ , _ ) ) , _) ) $
+3
+2 4 6
+
+--- Expected output (text)---
+start
+a(b(c(_,_),_),d(e(_,f(_,_)),_))
+info nodo N.2 =b il cammino e':
+0
+info nodo N.4 =e il cammino e':
+1 0
+info nodo N.6 =d il cammino e':
+1
+6(2(1(_,_),_),3(2(_,1(_,_)),_))
+info nodo N.2 =b il cammino e':
+0
+info nodo N.4 =e il cammino e':
+1 0
+info nodo N.6 =d il cammino e':
+1
+end

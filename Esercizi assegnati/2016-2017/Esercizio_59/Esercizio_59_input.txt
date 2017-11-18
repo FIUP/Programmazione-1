@@ -1,0 +1,111 @@
+Test 1: A
+--- Input ---
+0  10 2
+2 2 2 2 1 2 1 0 2 0
+
+--- Expected output (text)---
+albero:
+2(2(2(0(_,_),_),2(0(_,_),_)),2(1(2(_,_),_),1(_,_)))
+lista creata:
+2 0 2 1 1
+end
+
+Test 2: B
+--- Input ---
+0  15 2
+2 2 2 2 1 2 1 0 2 0 1 2 0 1 0
+
+--- Expected output (text)---
+albero:
+2(2(2(0(_,_),2(_,_)),2(0(_,_),1(_,_))),2(1(2(_,_),0(_,_)),1(1(_,_),0(_,_))))
+lista creata:
+2 2 2 2 1 2 1
+end
+
+Test 3: C
+--- Input ---
+0  15 1
+2 2 2 2 1 2 1 0 2 0 1 2 0 1 0
+
+--- Expected output (text)---
+albero:
+2(2(2(0(_,_),2(_,_)),2(0(_,_),1(_,_))),2(1(2(_,_),0(_,_)),1(1(_,_),0(_,_))))
+lista creata:
+0 2 2 2 0 2 1 2 2 1 0 2 1 1 0
+end
+
+Test 4: D
+--- Input ---
+0  15 6
+2 2 2 2 1 2 1 0 2 0 1 2 0 1 0
+
+--- Expected output (text)---
+albero:
+2(2(2(0(_,_),2(_,_)),2(0(_,_),1(_,_))),2(1(2(_,_),0(_,_)),1(1(_,_),0(_,_))))
+lista creata:
+2 2
+end
+
+Test 5: E
+--- Input ---
+1  10 2
+2 2 2 2 1 2 1 0 2 0
+
+--- Expected output (text)---
+albero:
+2(2(2(0(_,_),_),2(0(_,_),_)),2(1(2(_,_),_),1(_,_)))
+lista creata:
+2 0 2 1 1
+lista dei nodi tolti
+2 1
+lista dei nodi che restano
+2 0 1
+end
+
+Test 6: F
+--- Input ---
+1  15 2
+2 2 2 2 1 2 1 0 2 0 1 2 0 1 0
+
+--- Expected output (text)---
+albero:
+2(2(2(0(_,_),2(_,_)),2(0(_,_),1(_,_))),2(1(2(_,_),0(_,_)),1(1(_,_),0(_,_))))
+lista creata:
+2 2 2 2 1 2 1
+lista dei nodi tolti
+2 2 2 2 1
+lista dei nodi che restano
+2 1
+end
+
+Test 7: G
+--- Input ---
+1  15 1
+2 2 2 2 1 2 1 0 2 0 1 2 0 1 0
+
+--- Expected output (text)---
+albero:
+2(2(2(0(_,_),2(_,_)),2(0(_,_),1(_,_))),2(1(2(_,_),0(_,_)),1(1(_,_),0(_,_))))
+lista creata:
+0 2 2 2 0 2 1 2 2 1 0 2 1 1 0
+lista dei nodi tolti
+0 0 0 2 2 2 2 2 2 1 1 1
+lista dei nodi che restano
+0 2 1
+end
+
+Test 8: H
+--- Input ---
+1  15 6
+2 2 2 2 1 2 1 0 2 0 1 2 0 1 0
+
+--- Expected output (text)---
+albero:
+2(2(2(0(_,_),2(_,_)),2(0(_,_),1(_,_))),2(1(2(_,_),0(_,_)),1(1(_,_),0(_,_))))
+lista creata:
+2 2
+lista dei nodi tolti
+2
+lista dei nodi che restano
+2
+end

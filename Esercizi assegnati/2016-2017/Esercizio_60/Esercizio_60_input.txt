@@ -1,0 +1,79 @@
+Test 1: A
+--- Input ---
+4
+0 0 0 0
+
+--- Expected output (text)---
+Lista costruita
+0 0 0 0
+soluzione ricorsiva
+nodi tolti:
+0 0 0
+lista rimanente:
+0
+soluzione iterativa
+nodi tolti:
+0 0 0
+lista rimanente:
+0
+end
+
+Test 2: B
+--- Input ---
+12
+0 0 0 0 1 1 1 1 2 2 2 2
+
+--- Expected output (text)---
+Lista costruita
+0 0 0 0 1 1 1 1 2 2 2 2
+soluzione ricorsiva
+nodi tolti:
+0 0 0 1 1 1 2 2 2
+lista rimanente:
+0 1 2
+soluzione iterativa
+nodi tolti:
+0 0 0 1 1 1 2 2 2
+lista rimanente:
+0 1 2
+end
+
+Test 3: C
+--- Input ---
+12
+0 1 2 0 1 2 0 1 2 0 1 2
+
+--- Expected output (text)---
+Lista costruita
+0 1 2 0 1 2 0 1 2 0 1 2
+soluzione ricorsiva
+nodi tolti:
+0 1 2 0 1 2 0 1 2
+lista rimanente:
+0 1 2
+soluzione iterativa
+nodi tolti:
+0 1 2 0 1 2 0 1 2
+lista rimanente:
+0 1 2
+end
+
+Test 4: D
+--- Input ---
+12
+5 4 2 3 1 2 3 1 2 0 1 5
+
+--- Expected output (text)---
+Lista costruita
+5 4 2 3 1 2 3 1 2 0 1 5
+soluzione ricorsiva
+nodi tolti:
+5 2 3 1 2 1
+lista rimanente:
+4 3 2 0 1 5
+soluzione iterativa
+nodi tolti:
+5 2 3 1 2 1
+lista rimanente:
+4 3 2 0 1 5
+end
