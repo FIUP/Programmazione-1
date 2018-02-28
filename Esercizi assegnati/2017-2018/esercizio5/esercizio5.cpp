@@ -12,7 +12,6 @@ int main()
 
     char c;		
 	int count=0;	//contatore
-	bool ok = true;	//controllo booleano 
 	do {
 		cin >> c;
 		
@@ -22,10 +21,8 @@ int main()
 		else if (c==')') {
 		    count --;
 		}
-		if (count < 0)
-		    ok = false;
 		
-	} while(c!='0' && ok);
+	} while(c!='0' && count>=0);
 	
 	if(count ==0)
 		cout << "la sequenza e' bilanciata";
