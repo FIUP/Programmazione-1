@@ -9,20 +9,20 @@ int main() {
 
     // inserire qui il codice del programma
 
-	int a, b, c;
+    int a, b, c;
 
     cin >> a >> b >> c;
 
-	if ((a<b) && (a<c)) {
+    if ((a<b) && (a<c)) {
         cout << "il minimo e': " << a << endl;
     }
-	else if ((b<c) && (b<a)) {
+    else if ((b<c) && (b<a)) {
         cout << "il minimo e': " << b << endl;
     }
     else if ((c<b) && (c<a)) {
         cout << "il minimo e': " << c << endl;
     }
-	else if ((c==b) || (c==a) || (a==b)) {
+    else if ((c==b) || (c==a) || (a==b)) {
         cout << "il minimo e': " << c << endl;
     }
 
