@@ -2,34 +2,27 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
 	// delimitatore iniziale output del programma (stringa "start")
 	// ATTENZIONE! Non cancellare l'istruzione sottostante
 	cout << "start" << endl;
 
 	// inserire qui il codice del programma
-    
-    int a, somma=0, k=0;
-	
-	/*
-	cin >> a;
-	for(int i=1; ((i<10) && (a!=-1)); i++){
-		cin >> a;
-		somma=somma+a;
-	}*/
-	
-	do{
-	    cin >> a;
-    	if(a!=-1) 
-    	    somma= somma +a;
-	    k++;
-	}while(k<10 && a!=-1);
-	
-	cout<< "Il valore della somma e': " << somma <<endl;
 
-    
+    int a, somma = 0, k = 0;
+
+	do {
+	    cin >> a;
+    	if(a != -1)
+    	    somma = somma + a;
+	    k++;
+	} while(k < 10 && a != -1);
+
+	cout << "Il valore della somma e': " << somma << endl;
+
 	// delimitatore finale output del programma (stringa "end")
 	// ATTENZIONE! Non cancellare l'istruzione sottostante
 	cout << "end" << endl;
+
+	return 0;
 }
