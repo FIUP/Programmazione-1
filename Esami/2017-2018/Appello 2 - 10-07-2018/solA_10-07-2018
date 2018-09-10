@@ -1,0 +1,159 @@
+//Soluzione di S.Righetto
+
+#include<iostream>
+using namespace std;
+struct nodo{int  info; nodo* next; nodo(int a=0, nodo*b=0){info=a; next=b;}};
+struct coda{nodo* primo, *ultimo; coda(nodo*a=0,nodo*b=0){primo=a; ultimo=b;}};
+
+coda push_end(coda a, nodo*b)
+{
+	if(!a.primo)
+		{
+			a.primo=a.ultimo=b;
+			b->next=0;
+			return a;
+		}
+	a.ultimo->next=b;
+	a.ultimo=b;
+	b->next=0;
+	return a;
+}
+
+
+void stampa_lista(nodo*L)
+{
+	if(L)
+	{
+		cout<<L->info<<' ';
+		stampa_lista(L->next);
+	}
+	else
+		cout<<endl;
+
+}
+void build_array(int *P, int x)
+{
+	if(x)
+		{
+			cin>> *P;
+			build_array(P+1,x-1);    
+		}
+}
+
+nodo* build_list(int n)
+{
+	if(n)
+		{
+			int x;
+			cin >> x;
+			return new nodo(x,build_list(n-1));
+		}
+	return 0;
+}
+
+nodo* clone(nodo*L)
+{
+	if(!L) return 0;
+	return new nodo(L->info,clone(L->next));
+}
+
+//invariante
+/*PRE=(lista(L) è ben formata, A contiene dimA elementi non negativi e crescenti, dimA >0, vL=lista(L))*/
+nodo* distr_iter(nodo*&L, int* A, int dimA){
+	int count=0;
+	coda c1,c2;
+
+	while(L){ /*R=(L è una lista corretta)&&(A contiene dimA elementi non negativi e crescenti)&&
+	(dimA contiene il numero degli elementi dell'array A)&&
+	(count è il contatore degli elementi della lista L)&&(t è il primo nodo della lista L)&&
+	(c1 è una coda che contiene i nodi della lista L i cui indici sono presenti nell'array A)&&
+	(c2 è una coda che contiene i nodi della lista L i cui indici non sono presenti nell'array A)*/
+		nodo*t=L; 
+		L=L->next;
+
+		if(dimA && A[0] == count){
+			c1 = push_end(c1,t);
+			dimA--;
+			A++;
+		}
+		else 
+			c2 = push_end(c2,t);
+		count++;
+	}
+
+	L= c2.primo;
+	return c1.primo;
+}
+/*POST
+=(la funzione restituisce col return la lista L1 dei nodi di vL i cui indici sono in A 
+nello stesso ordine relativo che avevano in vL 
+mentre L diventa L2, cioè la lista dei nodi di vL i cui indici non 
+sono in A -nello stesso ordine relativo che avevano in vL)*/
+
+//prova induttiva
+/*PRE=(lista(L) è ben formata, A ha dimA >=0, elem
+enti non negativi e crescenti e, se dimA>0, allora 
+n<=A[0], vL=lista(L))*/
+nodo * distr_ric(nodo*&L, int *A, int dimA, int n){
+	
+	if(!L || !dimA) return 0;
+
+	nodo* L1;
+	if(*A == n){
+		L1=L;
+		L=L->next;
+		/*PRE_ric1=(lista(L) è ben formata, A+1 ha dimA-1 >=0, elementi non negativi e crescenti e, se dimA-1>0, allora 
+n+1<=*(A+1), vL=lista(L))*/
+		L1->next= distr_ric(L, A+1, dimA-1, n+1);
+		return L1;
+	}
+	else return distr_ric(L->next, A, dimA, n+1);
+}
+/*POST=(restituisce col return la lista L1 dei nodi di vL i cui indici, sommati a n, sono in A -
+nello stesso ordine relativo che avevano in vL e L diventa L2, cioè la lista dei nodi di vL i cui 
+indici sommati a n non sono in A nello stesso ordine relativo che avevano in vL)*/
+
+/*
+DIMOSTRAZIONE
+CASI BASE:
+	1- se la lista L è vuota quindi non ha elementi -> restituisce col return la lista L1 dei nodi di vL 
+		i cui indici, sommati a n, sono in A, ma vL è vuota, quindi anche L1 deve essere vuota. 
+		Per lo stesso motivo, anche L2 è vuota.
+	2- se dimA è uguale a 0 significa che l'array A è vuoto, quindi in L1 non ci sono elementi mentre in 
+		L2 ci sono i restanti ossia la lista L.
+
+PASSO INDUTTIVO:
+	Si assume per ipotesi induttiva che le chiamate ricorsive siano corrette rispetto a pre e post date.
+
+	Se il primo elemento dell'array A è uguale ad n allora L1 prende il primo elemento di L ed L diventa L->next.
+	L rimane ben formata, se così non fosse, sarebbe un caso base; dimA ha almeno un elemento, quindi dimA-1 è maggiore o 
+	uguale a 0; se dimA-1 è maggiore di 0 significa che ci sono almeno 2 elementi di cui il secondo è maggiore o 
+	uguale ad n+1 perchè essi sono in ordine crescente. 
+	L1->next conterrà gli elementi successivi di L i cui indici sono contenuti in A[1 .. dimA-1]. 
+	Viene ritornata L1 i cui nodi sono quelli di vL con indice n uguale ad A nello stesso ordine che avevano in vL.
+	L diventa L2 perchè i nodi di vL che devono essere contenuti in L1 vengono staccati dalla lista, quindi L2 è vL-i nodi di L1.
+
+	Se n è diverso dal primo elemento di A viene ritornata la lista L1 dei nodi di L->next i cui indici, sommati a n, sono 
+	in A. Il primo elemento di L non deve essere tolto e fa parte di L2.
+*/
+int main()
+{
+	int  n,m;
+	cin>> n;
+	nodo*L=build_list(n);
+	nodo*L1=clone(L);
+	cin>>m;
+	int*A=new int[m];
+	build_array(A,m);
+	cout<<"start"<<endl;
+	stampa_lista(L);
+	
+	nodo*y=distr_iter(L,A,m);
+	stampa_lista(y);
+	stampa_lista(L);
+	y=distr_ric(L1,A,m,0);
+	stampa_lista(y);
+	stampa_lista(L1);
+	
+	cout<<"end"<<endl;
+}
