@@ -1,0 +1,29 @@
+Test 1: A
+--- Input ---
+10 3 
+
+--- Expected output (text)---
+
+
+Test 2: B
+--- Input ---
+10 10
+
+--- Expected output (text)---
+
+
+Test 3: C
+--- Input ---
+7 11
+
+--- Expected output (text)---
+
+
+Test 4: D
+--- Input ---
+6 1 
+
+--- Expected output (text)---
+
+
+

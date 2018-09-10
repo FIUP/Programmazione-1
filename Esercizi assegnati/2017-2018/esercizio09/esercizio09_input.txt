@@ -1,0 +1,47 @@
+Test 1: A
+--- Input ---
+1 2 0 4
+
+--- Expected output (text)---
+start
+Le coordinate immesse non formano la diagonale di un quadrato
+end
+
+Test 2: B
+--- Input ---
+1 2 6 7
+
+--- Expected output (text)---
+start
+bbbbs
+bbbs
+bbs
+bs
+s
+end
+
+Test 3: C
+--- Input ---
+1 2 6 -3
+
+--- Expected output (text)---
+start
+s
+bs
+bbs
+bbbs
+bbbbs
+end
+
+Test 4: D
+--- Input ---
+1 2 -4 -3
+
+--- Expected output (text)---
+start
+bbbbs
+bbbs
+bbs
+bs
+s
+end

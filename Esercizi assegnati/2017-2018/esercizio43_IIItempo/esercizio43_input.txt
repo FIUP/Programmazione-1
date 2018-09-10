@@ -1,0 +1,38 @@
+Test 1: A
+--- Input ---
+20
+
+--- Expected output (text)---
+start
+1(2(4(8(16(_,_),_),12(20(_,_),_)),6(10(18(_,_),_),14(_,_))),3(5(9(17(_,_),_),13(_,_)),7(11(19(_,_),_),15(_,_))))
+end
+
+Test 2: B
+--- Input ---
+3
+1 2 3
+
+--- Expected output (text)---
+start
+1(2(_,_),3(_,_))
+end
+
+Test 3: C
+--- Input ---
+1
+10
+
+--- Expected output (text)---
+start
+10(_,_)
+end
+
+Test 4: D
+--- Input ---
+8
+1 2 3 4 5 6 7 8
+
+--- Expected output (text)---
+start
+1(2(4(8(_,_),_),6(_,_)),3(5(_,_),7(_,_)))
+end

@@ -1,0 +1,38 @@
+Test 1: A
+--- Input ---
+a b c ) z e z z n ( d ) e n d
+
+--- Expected output (text)---
+start
+la sequenza non e' bilanciata: ci sono parentesi chiuse senza match
+end
+
+Test 2: B
+--- Input ---
+( a ( e ( n) ) e n z ( a ) ) e n d
+
+
+--- Expected output (text)---
+start
+la sequenza e' bilanciata
+end
+
+
+Test 3: C
+--- Input ---
+( a ( b ( c ) ) e d n ( a ) e n d
+
+--- Expected output (text)---
+start
+la sequenza non e' bilanciata: ci sono parentesi aperte senza match
+end
+
+Test 4: D
+--- Input ---
+( )( d n e b b ) ) ( (  ( ( ) ) ) e n d
+
+--- Expected output (text)---
+start
+la sequenza non e' bilanciata: ci sono parentesi chiuse senza match
+end
+

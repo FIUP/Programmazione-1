@@ -1,0 +1,38 @@
+Test 1: A
+--- Input ---
+-1
+
+--- Expected output (text)---
+start
+Il valore della somma e': 0
+end
+
+Test 2: B
+--- Input ---
+-3 -1
+
+
+--- Expected output (text)---
+start
+Il valore della somma e': -3
+end
+
+Test 3: C
+--- Input ---
+1 5 -2 9 -3 -1
+
+
+--- Expected output (text)---
+start
+Il valore della somma e': 10
+end
+
+Test 4: D
+--- Input ---
+5 3 2 0 -4 1 6 -8 -2 -2
+
+--- Expected output (text)---
+start
+Il valore della somma e': 1
+end
+
