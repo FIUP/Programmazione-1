@@ -1,0 +1,111 @@
+Test 1: A
+--- Input ---
+38
+1  2  1  0
+11 22 11 10
+12 23 12 11
+13 24 13 12
+
+1  2  1  0
+11 22 11 10
+12 23 12 11
+13 24 13 12
+
+1  2  1  0
+11 22
+
+3 4 4
+
+--- Expected output (text)---
+start
+
+strato0
+r0:1 2 1 0
+r1:11 22 11 10
+r2:12 23 12 11
+r3:13 24 13 12
+
+strato1
+r0:1 2 1 0
+r1:11 22 11 10
+r2:12 23 12 11
+r3:13 24 13 12
+
+strato2
+r0:1 2 1 0
+r1:11 22
+end
+
+
+Test 2: B
+--- Input ---
+22
+1  2  1  0
+11 22 11 10
+12 23 12 11
+13 24 13 12
+
+1  2  1  0
+11 22
+
+3 4 4
+
+
+--- Expected output (text)---
+start
+
+strato0
+r0:1 2 1 0
+r1:11 22 11 10
+r2:12 23 12 11
+r3:13 24 13 12
+
+strato1
+r0:1 2 1 0
+r1:11 22
+end
+
+
+Test 3: C
+--- Input ---
+9
+1  2  1  0
+11 22 11 10
+12
+
+3 4 4
+
+--- Expected output (text)---
+start
+
+strato0
+r0:1 2 1 0
+r1:11 22 11 10
+r2:12
+end
+
+Test 4: D
+--- Input ---
+9
+1  2  1  0
+11 22 11 10
+12
+3 2 1
+
+--- Expected output (text)---
+start
+
+strato0
+r0:1
+r1:2
+
+strato1
+r0:1
+r1:0
+
+strato2
+r0:11
+r1:22
+end
+
+

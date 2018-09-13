@@ -1,0 +1,49 @@
+Test 1: A
+--- Input ---
+1  1  2  1  3  1  2  4  5  -1
+-1
+0  0  1  3  -1
+3  4  2  3  2  3  2  1  -1
+-1
+-1
+-2
+1
+
+
+--- Expected output (text)---
+start
+inizio sottosequenza 1 indice=10
+end
+
+
+Test 2: B
+--- Input ---
+2 1 3 22 -1 -1 0 -1 33 1 -1 -2
+4
+
+--- Expected output (text)---
+start
+sottosequenza 4 non presente
+end
+
+Test 3: C
+--- Input ---
+2 1 3 22 -1 -1 0 -1 33 1 -1 -2
+2
+
+--- Expected output (text)---
+start
+inizio sottosequenza 2 indice=6
+end
+
+Test 4: D
+--- Input ---
+-2
+0
+
+--- Expected output (text)---
+start
+sottosequenza 0 non presente
+end
+
+

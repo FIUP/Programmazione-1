@@ -1,0 +1,63 @@
+Test 1: A
+--- Input ---
+5
+
+ 1 0 1 0 0
+ 0 1 0 1 1
+ 0 0 1 0 1
+ 0 0 0 1 1
+ 0 0 1 1 0
+
+--- Expected output (text)---
+start
+c'e' un cammino
+end
+
+Test 2: B
+--- Input ---
+5
+
+ 1 0 1 0 0
+ 0 1 0 1 1
+ 0 0 1 0 1
+ 0 0 0 0 1
+ 0 0 1 1 0
+
+--- Expected output (text)---
+start
+c'e' un cammino
+end
+
+Test 3: C
+--- Input ---
+5
+
+ 1 0 1 0 0
+ 0 1 0 1 1
+ 0 0 1 0 1
+ 0 0 0 0 1
+ 1 0 1 0 0
+
+--- Expected output (text)---
+start
+non c'e' un cammino
+end
+
+
+Test 4: D
+--- Input ---
+5
+
+ 1 0 1 0 0
+ 0 1 0 1 1
+ 0 0 1 0 1
+ 0 0 0 1 1
+ 1 0 1 0 1
+
+--- Expected output (text)---
+start
+c'e' un cammino
+end
+
+
+

@@ -1,0 +1,38 @@
+Test 1: A
+--- Input ---
+aibofobia
+
+--- Expected output (text)---
+start
+la stringa e' palindroma
+end
+
+Test 2: B
+--- Input ---
+prepeeerp
+
+
+--- Expected output (text)---
+start
+la stringa non e' palindroma
+end
+
+Test 3: C
+--- Input ---
+EREGGERE
+
+--- Expected output (text)---
+start
+la stringa e' palindroma
+end
+
+Test 4: D
+--- Input ---
+A
+
+--- Expected output (text)---
+start
+la stringa e' palindroma
+end
+
+

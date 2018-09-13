@@ -1,0 +1,44 @@
+Test 1: A
+--- Input ---
+9 3 
+0 1 0 1 0 2 1 2 0
+1 2 0
+
+--- Expected output (text)---
+start 
+il match piu' lungo inizia in 6 ed e' lungo 3
+end
+
+Test 2: B
+--- Input ---
+9 3 
+0 1 0 1 0 2 3 2 0 
+5 2 3 
+
+--- Expected output (text)---
+start
+nessun match
+end
+
+Test 3: C
+--- Input ---
+9 3 
+1 2 3 0 2 1 2 3 2 
+1 2 3 
+
+--- Expected output (text)---
+start
+il match piu' lungo inizia in 0 ed e' lungo 3
+end
+
+Test 4: D
+--- Input ---
+4 5 
+1 2 3 4 
+1 2 3 4 5
+
+--- Expected output (text)---
+start
+il match piu' lungo inizia in 0 ed e' lungo 4
+
+

@@ -1,0 +1,54 @@
+Test 1: A
+--- Input ---
+2
+
+
+--- Expected output (text)---
+start
+Altezza non valida
+end
+
+Test 2: B
+--- Input ---
+3
+
+
+--- Expected output (text)---
+start
+.x.
+x.x
+.x.
+end
+
+
+Test 3: C
+--- Input ---
+4
+
+--- Expected output (text)---
+start
+..x..
+.x.x.
+x...x
+..x..
+end
+
+
+Test 4: D
+--- Input ---
+10
+
+
+--- Expected output (text)---
+start
+........x........
+.......x.x.......
+......x...x......
+.....x.....x.....
+....x.......x....
+...x.........x...
+..x...........x..
+.x.............x.
+x...............x
+........x........
+end

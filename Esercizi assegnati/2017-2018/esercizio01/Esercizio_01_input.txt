@@ -1,0 +1,35 @@
+Test 1: A
+--- Input ---
+10 20 30
+
+--- Expected output (text)---
+start
+il minimo e': 10
+end
+
+Test 2: B
+--- Input ---
+-3 40 23
+
+--- Expected output (text)---
+start
+il minimo e': -3
+end
+
+Test 3: C
+--- Input ---
+67 34 23
+
+--- Expected output (text)---
+start
+il minimo e': 23
+end
+
+Test 4: D
+--- Input ---
+-5 -5 -5
+
+--- Expected output (text)---
+start
+il minimo e': -5
+end
