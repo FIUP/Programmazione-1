@@ -1,0 +1,107 @@
+//Soluzione di Filippo Zonta Rocha e Marco Marchesin,sarà aggiornato con commento. 
+#include<iostream>
+using namespace std;
+
+struct nodo{int info; nodo* next; nodo(int a =0, nodo* b=0){info=a; next=b;}};
+struct nodoL{nodo* info; nodoL* next; nodoL(nodo* a =0, nodoL* b=0){info=a; next=b;}};
+
+
+
+nodo* clone(nodo*L)
+{
+	if(L)
+		return new nodo(L->info,clone(L->next));
+	return 0;
+}
+
+void stampaL(nodo*L)
+{
+	if(L)
+		{cout<<L->info<<' '; stampaL(L->next);}
+	else
+		cout<<endl;
+
+}
+void stampaLL(nodoL*LL,int n)
+{
+	if(LL)
+		{cout<<"fetta "<<n<<") "; stampaL(LL->info); stampaLL(LL->next,n+1);}
+}
+
+nodo* faiL(int n)
+{
+	if(n>0)
+		return new nodo(n, faiL(n-1));
+	return 0;
+
+}
+
+nodo* avanti(nodo*& L, int x){
+		if(!L || x<1)
+			return 0;
+		// qui L esiste e x > 0
+		nodo* t=L;
+		L=L->next;
+		t->next=avanti(L,x-1);
+		return t;
+}
+
+nodoL* affettaRIC(nodo* &L, int *A, int dimA){
+	if(!L || dimA<1) return 0;
+	return new nodoL(avanti (L, *A),
+								affettaRIC(L, ++A, --dimA));
+}
+
+
+nodo *avantiiter(nodo*& L, int x){
+	if (!x)
+		return 0;
+	nodo* ret =L;
+	for(int i=0;i<x-1; i++) L=L->next;
+	nodo *t = L;
+	L=L->next;
+	t->next=0;
+	return ret;
+}
+
+void concatena (nodoL *&LL, nodoL *b) {
+	if(!LL) LL = b;
+	else {
+		nodoL *c=LL;
+		while (c->next) c=c->next;
+		c->next=b;
+	}
+}
+
+nodoL * affettaITER(nodo* &L,int *A, int dimA){ 
+	nodoL* res=0;
+  for(int j=0;j<dimA;j++) {
+  	concatena(res, new nodoL(avantiiter(L,A[j]), NULL));
+  }
+	return res;
+}
+
+main()
+{
+	cout<<"start"<<endl;
+	nodo* L= faiL(10);
+	nodo*L0=clone(L);
+	int n, A[10];
+	cin >> n;
+	for(int i=0; i<n; i++)
+		cin >> A[i];
+	nodoL*K=affettaRIC(L,A,n);
+	cout<<"Lric=";
+	stampaL(L);
+	cout<<"LLric:"<<endl;
+	stampaLL(K,1);
+	cout<<endl;
+	K=affettaITER(L0,A,n);
+	cout<<"Liter=";
+	stampaL(L0);
+	cout<<"LLiter:"<<endl;
+	stampaLL(K,1);
+	
+	cout<<"end"<<endl;
+
+}
