@@ -5,7 +5,8 @@ Tutto quello che può essere d'aiuto per superare l'esame di Programmazione 1 (P
 Se vuoi contribuire ai nostri progetti, dichiari di accettare e rispettare il nostro [Codice di Condotta](https://github.com/FIUP/Getting_Started/blob/master/CODE_OF_CONDUCT.md).
 
 Qui potete trovare tutte le [linee guida per contribuire ai progetti del FIUP](https://github.com/FIUP/Getting_Started/blob/master/CONTRIBUTING.md).
-
+#### link appelli anni 2015/16 16/17 17/2018 con relativo:testo,test e relativa soluzione su Hackerrank per chi vuole esercitarsi:
+(https://www.hackerrank.com/raccolta-appelli-programmazione-1-unipd)
 # Linee guida per contribuire (valide dall'anno 2016-2017)
 Chiunque può proporre le proprie soluzioni a patto di rispettare le semplici linee guida, indicate in seguito per avere un'organizzazione migliore.
 
